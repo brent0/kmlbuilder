@@ -1,0 +1,4 @@
+import(R.oo)
+importFrom("rgdal", readGDAL)
+exportPattern("^[^\\.]")
+
