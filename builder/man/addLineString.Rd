@@ -8,7 +8,7 @@ Add LineString features to a kml
 After creating a kml object, you can add LineString features with this function so they are viewable in the graphics window of the google API. A dataframe x must be suplied to this function. At a minimum, x must contain columns pid, lat and lon. Each unique pid represents an individual LineString. To style these features, use addLineStyle and match styleid to styleUrl. 
 }
 \usage{
-yourKMLobj$addLineString(x)
+yourKMLobj$addLineString(x) 
 yourKMLobj$addLineString(x, altitude, styleUrl)
 }
 %- maybe also 'usage' for other objects documented here.
