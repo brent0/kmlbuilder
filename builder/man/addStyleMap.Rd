@@ -48,6 +48,6 @@ names(x) = c("lat", "lon", "name", "description")
 mykml$addPoint(x, styleUrl = "my_mouseover_style")
 
 #sample your creation
-mykml$preview()
+#mykml$preview()
 
 }

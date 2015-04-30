@@ -64,6 +64,6 @@ name = c("p1","p2","p3","p4","p5","p6","p7","p8","p9")
 x = cbind(lat, lon, extrude, altitude, name)
   
 mykml$addPoint(x, styleUrl = "ms", description = "This is an example description applied to all points")
-mykml$preview()
+#mykml$preview()
 
 }

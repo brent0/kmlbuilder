@@ -88,6 +88,6 @@ names(x) = c("lat", "lon")
 
 sur2013$getFolder("ports")$addPoint(x) #Demonstrate add data to folder
 
-mykml$preview()
+#mykml$preview()
 
 }

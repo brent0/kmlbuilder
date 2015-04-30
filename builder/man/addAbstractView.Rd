@@ -74,5 +74,5 @@ twoViewskml$addAbstractView(type = "camera", viewid = "sable_camera", latitude =
 #Add 2 folders each with one of the above abstractviews associated with it. Click on folder in tree to fly to view.
 twoViewskml$addFolder("lookat", name = "lookat example", description = "Click on this folder to fly to the lookat example", AbstractView = "sable_lookat", open = 1)
 twoViewskml$addFolder("camera", name = "camera example", description = "Click on this folder to fly to the camera example", AbstractView = "sable_camera", open = 1)
-twoViewskml$preview()
+#twoViewskml$preview()
 }

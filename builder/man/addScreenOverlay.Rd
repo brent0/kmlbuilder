@@ -86,6 +86,6 @@ mykml = RKmlObject()
 fn = file.path(getwd(), "figure.png")
 mykml$addScreenOverlay(fn, size_x = .2, size_y = .2)
 
-mykml$preview()
+#mykml$preview()
 
 }

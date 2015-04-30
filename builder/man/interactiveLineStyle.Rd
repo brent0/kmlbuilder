@@ -47,6 +47,6 @@ x = data.frame(cbind(c(1, 1, 1), c(45.9178, 46.3624, 46.807), c(-59.967,-60.114,
 names(x) = c("pid", "lat", "lon")
   
 mykml$addLineString(x, name= "fake road", description = "Louisbourg to Neil's Harbour", styleUrl = "mystyle", tessellate = 1 )
-mykml$preview()
+#mykml$preview()
 #Notice the line disapears on close zoom, this is an error in Google Earth. This can be mitigated by adding more #points along the line.  
 }

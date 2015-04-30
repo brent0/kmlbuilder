@@ -82,7 +82,7 @@ fn = file.path(R.home(), "doc", "html", "logo.jpg")
 mykml$addGroundOverlay(fn = fn, east = -63, west = -61, north = 46.5, south = 44.5, 
   transparency = .3, color = "red", name = "RedR", AbstractView = "Rview" )
 
-mykml$preview()
+#mykml$preview()
 
 }
 

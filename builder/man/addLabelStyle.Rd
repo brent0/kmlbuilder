@@ -58,6 +58,6 @@ x = data.frame(cbind(c(45.9178, 46.807), c(-59.967, -60.321), c("labelstyle1", "
 names(x) = c("lat", "lon", "styleUrl", "name", "description")
   
 mykml$addPoint(x)
-mykml$preview()
+#mykml$preview()
 
 }

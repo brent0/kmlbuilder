@@ -71,6 +71,6 @@ mykml$addPolygon(x, styleUrl = style, altitude = altitude)
 mykml$addLabelStyle(styleid = "mystyle1", color = "red", transparency = .2, scale = 3)
 mykml$addLabelStyle(styleid = "mystyle2", color = "green", transparency = 1, scale = 1)
  
-mykml$preview()
+#mykml$preview()
 
 }

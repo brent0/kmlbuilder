@@ -94,7 +94,7 @@ mykml$addFolder("MyNetworkLinks", name = "NetworkLinks")
 path2kmz = "www.ec.gc.ca/meteo-weather/C0D9B3D8-D256-407D-A68F-C606D703105E/GeoMet-E.kmz" 
 
 mykml$getFolder("MyNetworkLinks")$addNetworkLink(href = path2kmz, name= "GeoMet")
-mykml$preview()
+#mykml$preview()
 
 ### End Simple Example ###
 

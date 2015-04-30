@@ -39,7 +39,7 @@ lat = lat = rep(seq(44, 45, .1), 11) #latitude
 lon = rep(seq(-60, -61, -.1), 11) #longitude
 lon = lon[order(lon)]
 mykml$addPoint(x = cbind(lat, lon)) #add point features to kml
-mykml$preview() #sample the kml, used default styles
+#mykml$preview() #sample the kml, used default styles
 
 ### END SIMPLE EXAMPLE  ###
 
@@ -90,7 +90,7 @@ sty = c("my_style", "my_style2") #Cycles by pid
 alt = c(7000, 10000) #Cycles by pid
 mykml$addPolygon(x, y, styleUrl = sty, altitude = alt)
 
-mykml$preview()
+#mykml$preview()
 
 ### END STYLE EXAMPLE ### 
 }

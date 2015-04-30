@@ -100,5 +100,5 @@ altitude = c(2000, 4000, 8000) #Cycles with pid
 mykml$addPolygon(x, styleUrl = style, altitude = altitude)
 
 ##All optional arguments can be supplied in the function call and will cycle by pid
-mykml$preview()
+#mykml$preview()
 }

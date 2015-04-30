@@ -47,14 +47,14 @@ hostkml = RKmlObject()
 #add an Astract view
 hostkml$addAbstractView(type = "lookat", viewid = "sable_view", latitude = 43.9, longitude = -59.9, range = 100000)
 hostkml$addNetworkLinkControl(minRefreshPeriod = 20, maxSessionLength = 60, message = "Welcome to the example Network Control kml. This kml will only stay linked for 60 seconds", linkName = "Sable Island", linkDescription = "You will soon fly to St.Paul's Island", linkSnippet = "buckle your seatbelt", AbstractView = "sable_view")
-hostkml$writekml("hostkml.kml")
+#hostkml$writekml("hostkml.kml")
 
 #Create a client kml
 clientkml = RKmlObject()
 
 #kml client will attempt to refresh every second but will fail due to hosts minRefreshPeriod
 clientkml$addNetworkLink(href = "hostkml.kml",flyToView = 1, refreshMode = "onInterval", refreshInterval = 1)
-clientkml$preview()
+#clientkml$preview()
 
 #Wait a few seconds so that google dosn't try to load this one first
 Sys.sleep(10)
@@ -64,7 +64,7 @@ Sys.sleep(10)
 hostkml$addAbstractView(type = "lookat", viewid = "stPaulsView", latitude = 47.2, longitude = -60.15, range = 10000)
 hostkml$addNetworkLinkControl(minRefreshPeriod = 20, maxSessionLength = 60, message = "Welcome to the example Network Control kml. This kml will only stay linked for 60 seconds", linkName = "St.Paul's Island", linkDescription = "The link will expire in 40 seconds", linkSnippet = "watch your step", AbstractView = "stPaulsView")
 
-hostkml$writekml("hostkml.kml")
+#hostkml$writekml("hostkml.kml")
 
 
 ### End Example ###

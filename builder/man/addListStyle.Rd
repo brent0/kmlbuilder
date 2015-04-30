@@ -52,6 +52,6 @@ mykml$getFolder("new")$addFolder("1")
 mykml$getFolder("new")$addFolder("2")
 mykml$getFolder("new")$addFolder("3")
  
-mykml$preview()
+#mykml$preview()
 
 }

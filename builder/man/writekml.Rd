@@ -38,6 +38,6 @@ x = data.frame(cbind(c(45.9178, 46.807), c(-59.967, -60.321), c("labelstyle1", "
 names(x) = c("lat", "lon", "styleUrl", "name", "description")
   
 mykml$addPoint(x)
-mykml$writekml(path = file.path(getwd(), "kml_outputs", "example_kml.kml"))
+#mykml$writekml(path = file.path(getwd(), "kml_outputs", "example_kml.kml"))
 
 }

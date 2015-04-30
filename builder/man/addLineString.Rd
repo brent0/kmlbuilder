@@ -98,5 +98,5 @@ mykml$addLineString(x, styleUrl = style, altitude = altitude, altitudeMode = "re
 #mykml$addLineString(x, styleUrl = style, altitude = 1000, altitudeMode = "relativeToGround")
 
 ##All optional arguments can be supplied in the function call and will cycle by pid
-mykml$preview()
+#mykml$preview()
 }

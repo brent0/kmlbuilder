@@ -32,6 +32,6 @@ mykml$addFolder(fid = "EMPTY", name = "EMPTY")
 x = data.frame(cbind(c(45.9178, 46.807), c(-59.967, -60.321)))
 names(x) = c("lat", "lon")
 mykml$addPoint(x)
-mykml$preview()
+#mykml$preview()
 
 }

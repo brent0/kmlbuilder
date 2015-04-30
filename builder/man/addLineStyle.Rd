@@ -76,6 +76,6 @@ mykml$addLineString(x, name = "hello world")
 #mykml$addLineString(x, styleUrl = style, altitude = 1000)
 
 ##All optional arguments can be supplied in the function call and will cycle by pid
-mykml$preview()
+#mykml$preview()
 
 }
