@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8'?>
+    <kml xmlns='http://www.opengis.net/kml/2.2' xmlns:gx='http://www.google.com/kml/ext/2.2' xmlns:kml='http://www.opengis.net/kml/2.2' xmlns:atom='http://www.w3.org/2005/Atom'><Document id=''><open>1</open>
+<Style id='mystyle'>
+<IconStyle><color>#ff0000ff</color><colorMode>normal</colorMode><scale>0.2</scale><heading>0</heading><Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-circle-lv.png</href></Icon></IconStyle>
+<LabelStyle><color>#ff000000</color><colorMode>normal</colorMode><scale>0.5</scale></LabelStyle>
+</Style>
+<Placemark id='1'>
+<name>S1</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.033706,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='2'>
+<name>S2</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.02074717,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='3'>
+<name>S3</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.00778833,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='4'>
+<name>S4</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.9948295,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='5'>
+<name>S5</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.98187067,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='6'>
+<name>S6</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.96891183,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='7'>
+<name>S7</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.955953,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='8'>
+<name>S8</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.94299417,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='9'>
+<name>S9</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.93003533,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='10'>
+<name>S10</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.9170765,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='11'>
+<name>S11</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.90411767,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='12'>
+<name>S12</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.89115883,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='13'>
+<name>S13</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-58.8782,46.021826,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='14'>
+<name>N1</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.223638,46.177387,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='15'>
+<name>N2</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.21188625,46.18121067,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='16'>
+<name>N3</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.2001345,46.18503433,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='17'>
+<name>N4</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.18838275,46.188858,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='18'>
+<name>N5</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.176631,46.19268167,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='19'>
+<name>N6</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.16487925,46.19650533,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='20'>
+<name>N7</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.1531275,46.200329,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='21'>
+<name>N8</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.14137575,46.20415267,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='22'>
+<name>N9</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.129624,46.20797633,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='23'>
+<name>N10</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.11787225,46.2118,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='24'>
+<name>N11</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.1061205,46.21562367,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='25'>
+<name>N12</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.09436875,46.21944733,0</coordinates>
+</Point>
+</Placemark>
+<Placemark id='26'>
+<name>N13</name>
+<visibility>1</visibility>
+<open>0</open>
+<styleUrl>#mystyle</styleUrl>
+<Point>
+<altitudeMode>clampToGround</altitudeMode>
+<coordinates>-59.082617,46.223271,0</coordinates>
+</Point>
+</Placemark>
+</Document></kml>

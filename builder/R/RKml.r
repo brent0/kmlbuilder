@@ -748,7 +748,7 @@ setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color =
 setMethodS3("addListStyle", "RKmlFolder", function(this, styleid = NULL, listItemType = "check", bgColor = "white", ...) {
   lstyle = ListStyle
   
-  bgColor = color2kmlcolor(color = bgClor, transparency = 1)
+  bgColor = color2kmlcolor(color = bgColor, transparency = 1)
   ind = grep("<bgColor>", lstyle)
   if(!is.null(bgColor)){
     lstyle[ind] = gsub("..rep..", bgColor, lstyle[ind])
@@ -2414,7 +2414,7 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
   }
   
 })
-setMethodS3("addGroundOverlay", "RKmlFolder", function(this, x = NULL, fn = NULL, east=NULL, west=NULL, north=NULL, south=NULL, ...) {
+setMethodS3("addGroundOverlay", "RKmlFolder", function(this, fn = NULL, east=NA, west=NA, north=NA, south=NA, x = NULL, ...) {
   args = list(...)
 
   print(x)
@@ -2448,35 +2448,37 @@ unfn = unique(x$fn)
 
 #Get Frame for kml point
 mpoints = groundoverlay
-
+print(x)
 for(i in 1:nrow(x)){
   
   
- 
+ rwest = NULL
+ rnorth = NULL
+ rsouth = NULL
+ reast = NULL
     
     
       if(!file.exists(x$fn[i])){
-        if(is.null(x$east[i]) | is.null(x$west[i]) | is.null(x$north[i]) | is.null(x$south[i]) )
+        if(is.na(x$east[i]) | is.na(x$west[i]) | is.na(x$north[i]) | is.na(x$south[i]) )
           throw("If you are adding images from a network, you must define east, west, north and south coordinates.")
         
       }
       else{
       inf = GDALinfo(x$fn[i], silent = T)
       if(inf["ll.x"] == 0 | inf["ll.y"] == 0  ){
-        if(is.null(x$east[i]) | is.null(x$west[i]) | is.null(x$north[i]) | is.null(x$south[i]) )
+        if(is.na(x$east[i]) | is.na(x$west[i]) | is.na(x$north[i]) | is.na(x$south[i]) )
           throw(paste("Could not extract geodata from image. This wouldn't be a problem if you define east, west, north and south coordinates. Error at row ", i, sep=""))
       
       }
       else{
-        west = inf["ll.x"] 
-        east = west + (inf["res.x"] * inf["columns"])
-        south = inf["ll.y"] 
-        north = south + (inf["res.y"] * inf["rows"])
+        rwest = inf["ll.x"] 
+        reast = rwest + (inf["res.x"] * inf["columns"])
+        rsouth = inf["ll.y"] 
+        rnorth = rsouth + (inf["res.y"] * inf["rows"])
       }
    }
   
   
-
   
     
     #Variable list
@@ -2553,7 +2555,16 @@ for(i in 1:nrow(x)){
     assign(names(x[j]), x[[names(x)[j]]][i] )
   }
   
-   
+  
+  if(!is.null(rwest))
+  west = rwest
+  if(!is.null(reast))
+  east = reast
+  if(!is.null(rnorth))
+  north = rnorth
+  if(!is.null(rsouth))
+  south = rsouth
+  
   
   if(is.null(altitudeMode)){  
     if(!is.null(altitude)) altitudeMode = "relativeToGround"
@@ -2705,6 +2716,7 @@ for(i in 1:nrow(x)){
     ind = grep("LatLonBox", points)
     points[ind] = gsub("..rep..",box, points[ind])
     
+  print(box)
   ##<For non-rectangular image overlays. Not currently supported
   qbox = NULL
   ind = grep("LatLonQuad", points)

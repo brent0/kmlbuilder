@@ -13,7 +13,7 @@ This package can be used to quickly create kml documents within R. You can easil
 \tabular{ll}{
 Package: \tab kmlbuilder\cr
 Type: \tab Package\cr
-Version: \tab 1.1.3\cr
+Version: \tab 1.1.4\cr
 Date: \tab 2014-05-22\cr
 License: \tab MIT\cr
 }

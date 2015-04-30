@@ -51,6 +51,7 @@ addGroundOverlay(fn = pathtoimage, overlay_x, overlay_xunit, overlay_y, overlay_
      \item{styleUrl}{Character string or NULL. The id of the desired Style. Must create a style with one of the addStyle() or interactiveStyle() functions. (Default:NULL)}
      \item{Region}{Currently not supported}
      \item{ExtendedData}{Currently not supported}
+     \item{inFolder}{Allows the adding of data to a specified folder, (EXPERIMENTAL) Usage: inFolder = 'this\\that' }   
 }
 \references{
 \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#screenoverlay}{KML screenoverlay Reference} \cr

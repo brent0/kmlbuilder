@@ -45,7 +45,8 @@ Population Ecology Division
 mykml = RKmlObject()
 
 #Create a radio style to allow only one element of a container to be displayed at a time
-mykml$addListStyle(styleid = "test", bgColor = "green", listItemType = "radioFolder")mykml$addPolyStyle(styleid = "mystyle2", color = "yellow", transparency = 1, fill = 0)
+mykml$addListStyle(styleid = "test", bgColor = "green", listItemType = "radioFolder")
+mykml$addPolyStyle(styleid = "mystyle2", color = "yellow", transparency = 1, fill = 0)
 mykml$addFolder(fid = "new", styleUrl = "test")
 mykml$getFolder("new")$addFolder("1")
 mykml$getFolder("new")$addFolder("2")

@@ -38,6 +38,7 @@ yourKMLobj$addLineString(x, altitude, styleUrl)
      \item{styleUrl}{character with 1 or more elements cycled by pid, the id of the desired Style. Must create a style with one of the addStyle() or interactiveStyle() functions. (Default:NULL)}
      \item{Region}{Currently not supported}
      \item{ExtendedData}{Currently not supported}
+     \item{inFolder}{Allows the adding of data to a specified folder, (EXPERIMENTAL) Usage: inFolder = 'this\\that' }   
 You can add styles directly by defining any of the following variables. This is however discouraged as a new style is created for each row of x. These will be ignored if styleid is defined.   
 \item{icon_color, icon_href, icon_transparency, icon_scale, icon_heading, icon_xunits, icon_x, icon_yunits, icon_y, icon_colorMode, bal_bgColor, bal_textColor, bal_text,  bal_displayMode, label_color, label_transparency, label_colorMode, label_scale, line_color, line_transparency, line_width, line_outerColor, line_outerTransparency, line_outerPortion, line_colorMode, line_labelVisibility	}{You can define these but it is POOR FORM!!! see icon, balloon, label, and line style documentation for values.   }
 
