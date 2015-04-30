@@ -10,4 +10,5 @@ LazyData: true
 Description: Contains functions that generate kml features for folders, points, 
         polygons, linestrings, image overlays, screen overlays and gives methods 
         to style these features.
+ERRORS: Submit bug report at https://github.com/brent0/kmlbuilder
 License: MIT
