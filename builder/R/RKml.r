@@ -70,7 +70,7 @@ setMethodS3("styleBuilder", "RKmlFolder", function(this, ...) {
 
   }
   
-style = Style
+style = c("<Style id='..rep..'>", "</Style>")
 styleh = style
   
 if(mo){
@@ -374,7 +374,14 @@ setMethodS3("interactiveLineStyle", "RKmlFolder", function(this, id, ...) {
 })
 setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = NULL, color = "", transparency = 1, scale = 1, heading = 0, xunits = "fraction", yunits = "fraction", x = .5, y = .5, colorMode = "normal", ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
-  lstyle = IconStyle
+  lstyle =  c("<IconStyle>"                                                                        
+,"<color>..rep..</color>"                                                             
+,"<colorMode>..rep..</colorMode>"                                                     
+,"<scale>..rep..</scale>"                                                             
+,"<heading>..rep..</heading>"                                                         
+,"<Icon><href>..rep..</href></Icon>"                                                  
+,"<hotSpot x=\"..repx..\"  y=\"..repy..\" xunits=\"..repxu..\" yunits=\"..repyu..\"/>"
+,"</IconStyle>" )
 
   color = color2kmlcolor(color = color, transparency = transparency)
   
@@ -441,7 +448,7 @@ setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = 
     style = temp
   }
   else{
-    style = Style
+    style = c("<Style id='..rep..'>", "</Style>")
     ind = grep("Style id", style)
     style[ind] = gsub("..rep..", styleid, style[ind])
     end = style[length(style)]
@@ -453,7 +460,12 @@ setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = 
 })
 setMethodS3("addPolyStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = 1, colorMode = NULL, fill = "1", outline = "1", ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
-  lstyle = PolyStyle
+  lstyle = c("<PolyStyle>"
+             ,"<color>..rep..</color>"
+             ,"<colorMode>..rep..</colorMode>"
+             ,"<fill>..rep..</fill>"
+             ,"<outline>..rep..</outline>"
+             ,"</PolyStyle>")
   tra = as.hexmode(round(as.numeric(transparency)*255))
   if(color == "")color = NULL
   if(!is.null(color)){
@@ -509,7 +521,7 @@ setMethodS3("addPolyStyle", "RKmlFolder", function(this, styleid = NULL, color =
     style = temp
   }
   else{
-    style = Style
+    style = c("<Style id='..rep..'>", "</Style>")
     ind = grep("Style id", style)
     style[ind] = gsub("..rep..", styleid, style[ind])
     end = style[length(style)]
@@ -525,7 +537,10 @@ setMethodS3("addStyleMap", "RKmlFolder", function(this, id = NULL, idn = NULL, i
   if(is.null(idn))throw("You must supply an idn argument")
   if(is.null(idh))throw("You must supply an idh argument")
   while(!is.null(tmp$.parent)) tmp = tmp$.parent
-  stylemap = StyleMap
+  stylemap = c("<StyleMap id='..rep..'>"                                       
+               ,"<Pair><key>normal</key><styleUrl>#..rep..</styleUrl></Pair>"   
+               ,"<Pair><key>highlight</key><styleUrl>#..rep..</styleUrl></Pair>"
+               ,"</StyleMap>" )
   ind = grep("StyleMap id", stylemap)
   stylemap[ind] = gsub("..rep..", id, stylemap[ind])
   ind = grep("normal", stylemap)
@@ -537,7 +552,11 @@ setMethodS3("addStyleMap", "RKmlFolder", function(this, id = NULL, idn = NULL, i
 })
 setMethodS3("addLabelStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = 1, colorMode = "normal", scale = 1, ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
-  lstyle = LabelStyle
+  lstyle = c("<LabelStyle>"
+,"<color>..rep..</color>"
+,"<colorMode>..rep..</colorMode>"
+,"<scale>..rep..</scale>"
+,"</LabelStyle>")
 
   color = color2kmlcolor(color = color, transparency = transparency)
     
@@ -576,7 +595,7 @@ setMethodS3("addLabelStyle", "RKmlFolder", function(this, styleid = NULL, color 
     style = temp
   }
   else{
-    style = Style
+    style = c("<Style id='..rep..'>", "</Style>"  )
     ind = grep("Style id", style)
     style[ind] = gsub("..rep..", styleid, style[ind])
     end = style[length(style)]
@@ -589,7 +608,12 @@ setMethodS3("addLabelStyle", "RKmlFolder", function(this, styleid = NULL, color 
 setMethodS3("addBalloonStyle", "RKmlFolder", function(this, styleid = NULL, bgColor = "white", textColor = "black", text = NULL, displayMode = "display", ...) {
 
   if(is.null(styleid)) throw("You must define the styleid argument.")
-  lstyle =BalloonStyle
+  lstyle = c("<BalloonStyle>"
+  ,"<bgColor>..rep..</bgColor>"
+  ,"<textColor>..rep..</textColor>"
+  ,"<text>..rep..</text>"              
+  ,"<displayMode>..rep..</displayMode>"
+  ,"</BalloonStyle>")    
 
 bgColor = color2kmlcolor(color = bgColor, transparency = 1)
 
@@ -647,7 +671,7 @@ textColor = color2kmlcolor(color = textColor, transparency = 1)
     style = temp
   }
   else{
-    style = Style
+    style = c("<Style id='..rep..'>", "</Style>"  )
     ind = grep("Style id", style)
     style[ind] = gsub("..rep..", styleid, style[ind])
     end = style[length(style)]
@@ -660,7 +684,15 @@ textColor = color2kmlcolor(color = textColor, transparency = 1)
 setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = 1, width = 1, outerColor = NULL, outerTransparency = NULL, outerPortion = NULL, colorMode = NULL, labelVisibility = 0, ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   pwidth = NULL
-  lstyle = LineStyle
+  lstyle = c("<LineStyle>"                                     
+  ,"<color>..rep..</color>"                          
+  ,"<colorMode>..rep..</colorMode>"                  
+  ,"<width>..rep..</width>"                          
+  ,"<gx:outerColor>..rep..</gx:outerColor>"          
+  ,"<gx:outerWidth>..rep..</gx:outerWidth>"          
+  ,"<gx:physicalWidth>..rep..</gx:physicalWidth>"    
+  ,"<gx:labelVisibility>..rep..</gx:labelVisibility>"
+  ,"</LineStyle>") 
   
   color = color2kmlcolor(color = color, transparency = transparency)
   ind = grep("<color>", lstyle)
@@ -735,7 +767,7 @@ setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color =
     style = temp
   }
   else{
-    style =Style
+    style = c("<Style id='..rep..'>", "</Style>")
     ind = grep("Style id", style)
     style[ind] = gsub("..rep..", styleid, style[ind])
     end = style[length(style)]
@@ -746,7 +778,10 @@ setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color =
   
 })
 setMethodS3("addListStyle", "RKmlFolder", function(this, styleid = NULL, listItemType = "check", bgColor = "white", ...) {
-  lstyle = ListStyle
+  lstyle = c("<ListStyle>"
+             ,"<listItemType>..rep..</listItemType>"
+             ,"<bgColor>..rep..</bgColor>"
+             ,"</ListStyle>") 
   
   bgColor = color2kmlcolor(color = bgColor, transparency = 1)
   ind = grep("<bgColor>", lstyle)
@@ -774,7 +809,7 @@ setMethodS3("addListStyle", "RKmlFolder", function(this, styleid = NULL, listIte
     style = temp
   }
   else{
-    style =Style
+    style = c("<Style id='..rep..'>", "</Style>")
     ind = grep("Style id", style)
     style[ind] = gsub("..rep..", styleid, style[ind])
     end = style[length(style)]
@@ -790,8 +825,30 @@ setMethodS3("addAbstractView", "RKmlFolder", function(this, viewid = NULL, type 
     else altitude = 0
   }
   style = ""
-  if(type == "camera")style = Camera
-  else if(type == "lookat") style = LookAt
+  if(type == "camera")style = c("<Camera id='..rep..'>"                                          
+  ,"<TimeStamp><when>..rep..</when></TimeStamp>"                    
+  ,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"
+  ,"<gx:ViewerOptions>..rep..</gx:ViewerOptions>"                   
+  ,"<longitude>..rep..</longitude>"                                 
+  ,"<latitude>..rep..</latitude>"                                   
+  ,"<altitude>..rep..</altitude>"                                   
+  ,"<heading>..rep..</heading>"                                     
+  ,"<tilt>..rep..</tilt>"                                           
+  ,"<roll>..rep..</roll>"                                           
+  ,"<altitudeMode>clampToGround</altitudeMode>"                     
+  ,"</Camera>")     
+  else if(type == "lookat") style = c("<LookAt id='..rep..'>"                                          
+                                      ,"<TimeStamp><when>..rep..</when></TimeStamp>"                    
+                                      ,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"
+                                      ,"<gx:ViewerOptions>..rep..</gx:ViewerOptions>"                   
+                                      ,"<longitude>..rep..</longitude>"                                 
+                                      ,"<latitude>..rep..</latitude>"                                   
+                                      ,"<altitude>..rep..</altitude>"                                   
+                                      ,"<heading>..rep..</heading>"                                     
+                                      ,"<tilt>..rep..</tilt>"                                           
+                                      ,"<range>..rep..</range>"                                         
+                                      ,"<altitudeMode>clampToGround</altitudeMode>"                     
+                                      ,"</LookAt>"  )
   else throw("You must choose either 'lookat' or 'camera' for the type")
   
   if(is.null(viewid)) throw("You must supply a viewid")
@@ -894,7 +951,7 @@ setMethodS3("addPoint", "RKmlFolder", function(this, x, ...) {
   tryCatch({
     x = data.frame(x)
   }, error = function() {
-    print("Could not coerce x into dataframe.")
+    warning("Could not coerce x into dataframe.")
   })
   
   
@@ -910,16 +967,37 @@ setMethodS3("addPoint", "RKmlFolder", function(this, x, ...) {
   tryCatch({
     x = data.frame(x)
   }, error = function() {
-    print("Could not coerce x into dataframe.")
+    warning("Could not coerce x into dataframe.")
   })
   
 
   
   
   #Get Frame for kml point
-  mpoints = point
- 
-  for(i in 1:nrow(x)){
+  mpoints = c( "<Placemark id='..rep..'>"                                       
+               ,"<name>..rep..</name>"                                           
+               ,"<visibility>1</visibility>"                                     
+               ,"<open>0</open>"                                                 
+               ,"<atom:author><atom:name>..rep..</atom:name></atom:author>"      
+               ,"<atom:link href='..rep..'/>"                                    
+               ,"<address>..rep..</address>"                                     
+               ,"<xal:AddressDetails>..rep..</xal:AddressDetails>"               
+               ,"<phoneNumber>..rep..</phoneNumber>"                             
+               ,"<Snippet maxLines='2'>..rep..</Snippet>"                        
+               ,"<description>..rep..</description>"                             
+               ,"<AbstractView>#..rep..</AbstractView>"                          
+               ,"<TimeStamp><when>..rep..</when></TimeStamp>"                    
+               ,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"
+               ,"<styleUrl>#..rep..</styleUrl>"                                  
+               ,"<Region>..rep..</Region>"                                       
+               ,"<ExtendedData>..rep..</ExtendedData>"                           
+               ,"<Point>"                                                        
+               ,"<extrude>..rep..</extrude>"                                     
+               ,"<altitudeMode>clampToGround</altitudeMode>"                     
+               ,"<coordinates>..rep..</coordinates>"                             
+               ,"</Point>"                                                       
+               ,"</Placemark>")
+   for(i in 1:nrow(x)){
   
   #Variable list
   lat = 0
@@ -1014,12 +1092,7 @@ setMethodS3("addPoint", "RKmlFolder", function(this, x, ...) {
   if(is.null(x$altitude)){
     
     if(!is.null(altitude)){
-      
-      if(length(altitude) > 1){
-        if(i > length(altitude))altitude = altitude[i %% length(altitude)] 
-        else altitude = altitude[i]
-      }
-      
+      altitude = altitude[modmod(i, length(altitude))] 
       if(is.na(as.numeric(as.character(altitude)))) throw("altitude must be numeric or able to coerce to numeric ")
       altitude = as.numeric(as.character(altitude))
     }
@@ -1172,23 +1245,23 @@ if(!(is.null(line_color) & is.null(line_transparency) & is.null(line_width) & is
            tmp$addIconStyle(styleid = sid, href = icon_href, color = icon_color, transparency = icon_transparency, scale = icon_scale, heading = icon_heading, xunits = icon_xunits, x = icon_x, yunits = icon_yunits, y = icon_y, colorMode = icon_colorMode )
            }
            if(bs){
-           if(is.null(icon_bgColor))icon_bgColor = "white"
-           if(is.null(icon_textColor))icon_textColor = "black"
-           if(is.null(icon_displayMode))icon_displayMode = "display"
+           if(is.null(bal_bgColor))bal_bgColor = "white"
+           if(is.null(bal_textColor))bal_textColor = "black"
+           if(is.null(bal_displayMode))bal_displayMode = "display"
            tmp$addBalloonStyle(styleid = sid, bgColor = bal_bgColor, textColor = bal_textColor, text = bal_textColor, displayMode = bal_displayMode)   
            }
            if(lis){
-           if(is.null(icon_color))icon_color = "red"
-           if(is.null(icon_transparency))icon_transparency = 1
-           if(is.null(icon_width))icon_width = 1
-           if(is.null(icon_labelVisibility))icon_labelVisibility = 0
+           if(is.null(line_color))line_color = "red"
+           if(is.null(line_transparency))line_transparency = 1
+           if(is.null(line_width))line_width = 1
+           if(is.null(line_labelVisibility))line_labelVisibility = 0
            tmp$addLineStyle(styleid = sid, color = line_color, transparency = line_transparency, width = line_width, outerColor = line_outerColor, outerTransparency = line_outerTransparency, outerPortion = line_outerPortion, colorMode = line_colorMode, labelVisibility = line_labelVisibility)
            }
            if(ls){
-           if(is.null(icon_color))icon_color = "red"
-           if(is.null(transparency))transparency = 1
-           if(is.null(colorMode))colorMode = "normal"
-           if(is.null(scale))scale = 1   
+           if(is.null(label_color))icon_color = "red"
+           if(is.null(label_transparency))label_transparency = 1
+           if(is.null(label_colorMode))label_colorMode = "normal"
+           if(is.null(label_scale))label_scale = 1   
            tmp$addLabelStyle(styleid = sid, color = label_color, transparency = label_transparency, colorMode = label_colorMode, scale = label_scale)
            }
            
@@ -1278,14 +1351,14 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   tryCatch({
     x = data.frame(x)
   }, error = function() {
-    print("Could not coerce x into dataframe.")
+    warning("Could not coerce x into dataframe.")
   })
 
   if(! is.null(y)){
   tryCatch({
     y = data.frame(y)
   }, error = function() {
-    print("Could not coerce y into dataframe.")
+    warning("Could not coerce y into dataframe.")
   })
   }
   
@@ -1315,7 +1388,7 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   tryCatch({
     x = data.frame(x)
   }, error = function() {
-    print("Could not coerce x into dataframe.")
+    warning("Could not coerce x into dataframe.")
   })
 
   ##Test if y data frame has been supplied. Y data fram defines inner polygons
@@ -1344,7 +1417,7 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
     tryCatch({
       y = data.frame(y)
     }, error = function() {
-      print("Could not coerce y into dataframe.")
+      warning("Could not coerce y into dataframe.")
     })
     
     
@@ -1354,7 +1427,31 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   
   #Get Frame for kml point
-  ppoints = polygon
+  ppoints = c( "<Placemark id='..rep..'>"                                                                      
+               ,"<name>..rep..</name>"                                                                          
+               ,"<visibility>1</visibility>"                                                                    
+               ,"<open>0</open>"                                                                                
+               ,"<atom:author><atom:name>..rep..</atom:name></atom:author>"                                     
+               ,"<atom:link href='..rep..'/>"                                                                   
+               ,"<address>..rep..</address>"                                                                    
+               ,"<xal:AddressDetails>..rep..</xal:AddressDetails>"                                              
+               ,"<phoneNumber>..rep..</phoneNumber>"                                                            
+               ,"<Snippet maxLines='2'>..rep..</Snippet>"                                                       
+               ,"<description>..rep..</description>"                                                            
+               ,"<AbstractView>#..rep..</AbstractView>"                                                         
+               ,"<TimeStamp><when>..rep..</when></TimeStamp>"                                                   
+               ,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"                               
+               ,"<styleUrl>#..rep..</styleUrl>"                                                                 
+               ,"<Region>..rep..</Region>"                                                                      
+               ,"<ExtendedData>..rep..</ExtendedData>"                                                          
+               ,"<Polygon id=\"ID\">"                                                                           
+               ,"<extrude>..rep..</extrude>"                                                                    
+               ,"<tessellate>..rep..</tessellate>"                                                              
+               ,"<altitudeMode>clampToGround</altitudeMode>"                                                    
+               ,"<outerBoundaryIs><LinearRing><coordinates>..rep..</coordinates></LinearRing></outerBoundaryIs>"
+               ,"<innerBoundaryIs><LinearRing><coordinates>..rep..</coordinates></LinearRing></innerBoundaryIs>"
+               ,"</Polygon>"                                                                                    
+               ,"</Placemark>"    )
   
   tx = split(x, x$pid)
   
@@ -1436,7 +1533,7 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
     }
     
     for(j in 1:length(mx)){
-      assign(names(mx[j]), mx[[names(mx)[j]]][i] )
+      assign(names(mx[j]), mx[[names(mx)[j]]][1] )
     }
     
   
@@ -1451,10 +1548,8 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   if(is.null(mx$altitude)){
     if(!is.null(altitude)){
-      if(length(altitude) > 1){
-        if(i > length(altitude))altitude = altitude[i %% length(altitude)] 
-        else altitude = altitude[i]
-      }
+      altitude = altitude[modmod(i, length(altitude))] 
+       
       if(is.na(as.numeric(as.character(altitude)))) throw("altitude must be numeric or able to coerce to numeric ")
       altitude = as.numeric(as.character(altitude))
     }
@@ -1463,10 +1558,10 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   ind = grep("extrude", points)
   if(!is.null(extrude)){
-    if(length(extrude) > 1){
-      if(i > length(extrude))extrude = extrude[i %% length(extrude)] 
-      else extrude = extrude[i]
-    }
+    
+     extrude = extrude[modmod(i, length(extrude))] 
+     
+    
     extrude = as.numeric(as.character(extrude))
     if(! (extrude==0 | extrude==1)) throw("extrude must be either 0 or 1 (boolean)")
     points[ind] = gsub("..rep..", extrude, points[ind])
@@ -1475,10 +1570,8 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   ind = grep("tessellate", points)
   if(!is.null(tessellate)){
-    if(length(tessellate) > 1){
-      if(i > length(tessellate))tessellate = tessellate[i %% length(tessellate)] 
-      else tessellate = tessellate[i]
-    }
+   tessellate = tessellate[modmod(i, length(tessellate))] 
+   
     tessellate = as.numeric(as.character(tessellate))
     if(! (tessellate==0 | tessellate==1)) throw("tessellate must be either 0 or 1 (boolean)")
     points[ind] = gsub("..rep..", tessellate, points[ind])
@@ -1486,10 +1579,8 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   else points = points[-ind]  
   
   if(!is.null(altitudeMode)){
-    if(length(altitudeMode) > 1){
-      if(i > length(altitudeMode))altitudeMode = altitudeMode[i %% length(altitudeMode)] 
-      else altitudeMode = altitudeMode[i]
-    }
+    altitudeMode = altitudeMode[modmod(i, length(altitudeMode))] 
+    
     if(!altitudeMode %in% c("clampToGround", "relativeToGround", "absolute", "clampToSeaFloor", "relativeToSeaFloor"))
       throw("altitudeMode must be one of the following: clampToGround, relativeToGround, absolute, clampToSeaFloor, relativeToSeaFloor")
     ind = grep("altitudeMode", points)
@@ -1501,19 +1592,14 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   ind = grep("<name>", points)
   if(!is.null(name)){
-    if(length(name) > 1){
-      if(i > length(name))name = name[i %% length(name)] 
-      else name = name[i]
-    }
+    name = name[modmod(i, length(name))] 
     points[ind] = gsub("..rep..", name, points[ind])
   }
   else points = points[-ind]
     
   if(!is.null(visibility)){
-    if(length(visibility) > 1){
-      if(i > length(visibility))visibility = visibility[i %% length(visibility)] 
-      else visibility = visibility[i]
-    }
+    visibility = visibility[modmod(i, length(visibility))] 
+      
     visibility = as.numeric(as.character(visibility))
     if(! (visibility==0 | visibility==1)) throw("visibility must be either 0 or 1 (boolean)")
     
@@ -1521,10 +1607,8 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
     points[ind] = gsub("0", visibility, points[ind])
   }
   if(!is.null(open)){
-    if(length(open) > 1){
-      if(i > length(open))open = open[i %% length(open)] 
-      else open = open[i]
-    }
+   open = open[modmod(i, length(open))] 
+      
     open = as.numeric(as.character(open))
     if(! (open==0 | open==1)) throw("open must be either 0 or 1 (boolean)")
     
@@ -1534,20 +1618,16 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   ind = grep("atom:author", points)
   if(!is.null(atomauthor)){
-    if(length(atomauthor) > 1){
-      if(i > length(atomauthor))atomauthor = atomauthor[i %% length(atomauthor)] 
-      else atomauthor = atomauthor[i]
-    }
+   atomauthor = atomauthor[modmod(i, length(atomauthor))] 
+    
     points[ind] = gsub("..rep..", atomauthor, points[ind])
   }
   else points = points[-ind]
   
   ind = grep("atom:link", points)
   if(!is.null(atomlinkhref)){
-    if(length(atomlinkhref) > 1){
-      if(i > length(atomlinkhref))atomlinkhref = atomlinkhref[i %% length(atomlinkhref)] 
-      else atomlinkhref = atomlinkhref[i]
-    }
+    atomlinkhref = atomlinkhref[modmod(i, length(atomlinkhref))] 
+     
     points[ind] = gsub("..rep..", atomlinkhref, points[ind])
     
   }
@@ -1555,30 +1635,23 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   ind = grep("xal:AddressDetails", points)
   if(!is.null(xalAddressDetails)){
-    if(length(xalAddressDetails) > 1){
-      if(i > length(xalAddressDetails))xalAddressDetails = xalAddressDetails[i %% length(xalAddressDetails)] 
-      else xalAddressDetails = xalAddressDetails[i]
-    }
+   xalAddressDetails = xalAddressDetails[modmod(i, length(xalAddressDetails))] 
     points[ind] = gsub("..rep..", xalAddressDetails, points[ind])
   }
   else points = points[-ind]
   
   ind = grep("address", points)
   if(!is.null(address)){
-    if(length(address) > 1){
-      if(i > length(address))address = address[i %% length(address)] 
-      else address = address[i]
-    } 
+   address = address[modmod(i, length(address))] 
+      
     points[ind] = gsub("..rep..", address, points[ind])
   }
   else points = points[-ind]
   
   ind = grep("phoneNumber", points)
   if(!is.null(phoneNumber)){
-    if(length(phoneNumber) > 1){
-      if(i > length(phoneNumber))phoneNumber = phoneNumber[i %% length(phoneNumber)] 
-      else phoneNumber = phoneNumber[i]
-    } 
+    phoneNumber = phoneNumber[modmod(i, length(phoneNumber))] 
+     
     points[ind] = gsub("..rep..", phoneNumber, points[ind])
   }
   else points = points[-ind]
@@ -1586,10 +1659,8 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   ind = grep("Snippet", points)
   if(!is.null(Snippet)){
-    if(length(Snippet) > 1){
-      if(i > length(Snippet))Snippet = Snippet[i %% length(Snippet)] 
-      else Snippet = Snippet[i]
-    } 
+    Snippet = Snippet[modmod(i, length(Snippet))] 
+     
     Snippet = as.character(Snippet)
     maxlines = length(unlist(strsplit(Snippet, "\n")))
     points[ind] = gsub("2", maxlines, points[ind])
@@ -1601,10 +1672,8 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   ind = grep("description", points)
   if(!is.null(description)){
-    if(length(description) > 1){
-      if(i > length(description))description = description[i %% length(description)] 
-      else description = description[i]
-    } 
+    description = description[modmod(i, length(description))] 
+      
     points[ind] = gsub("..rep..", description, points[ind])
   }
   else points = points[-ind]
@@ -1613,10 +1682,8 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   
   ind = grep("AbstractView", points)
   if(!is.null(AbstractView)){
-    if(length(AbstractView) > 1){
-      if(i > length(AbstractView))AbstractView = AbstractView[i %% length(AbstractView)] 
-      else AbstractView = AbstractView[i]
-    }
+    AbstractView = AbstractView[modmod(i, length(AbstractView))] 
+     
 
     tmp = this
     while(!is.null(tmp$.parent)) tmp = tmp$.parent
@@ -1630,10 +1697,8 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   #TODO Add time format check!
   ind = grep("TimeStamp", points)
   if(!is.null(TimeStamp)){
-    if(length(TimeStamp) > 1){
-      if(i > length(TimeStamp))TimeStamp = TimeStamp[i %% length(TimeStamp)] 
-      else TimeStamp = TimeStamp[i]
-    }
+   TimeStamp = TimeStamp[modmod(i,length(TimeStamp))] 
+   
     points[ind] = gsub("..rep..", TimeStamp, points[ind])
   }
   else points = points[-ind]
@@ -1643,18 +1708,14 @@ setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   ind = grep("TimeSpan", points)
   if(!(is.null(TimeSpanStart) & is.null(TimeSpanEnd))){
     if(!is.null(TimeSpanStart)){
-      if(length(TimeSpanStart) > 1){
-        if(i > length(TimeSpanStart))TimeSpanStart = TimeSpanStart[i %% length(TimeSpanStart)] 
-        else TimeSpanStart = TimeSpanStart[i]
-      }
+     TimeSpanStart = TimeSpanStart[modmod(i,length(TimeSpanStart))] 
+        
       points[ind] = gsub("..repa..", TimeSpanStart, points[ind])
     }
     else gsub("<begin>..repa..</begin>", "", points[ind])
     if(!is.null(TimeSpanEnd)){
-      if(length(TimeSpanEnd) > 1){
-        if(i > length(TimeSpanEnd))TimeSpanEnd = TimeSpanEnd[i %% length(TimeSpanEnd)] 
-        else TimeSpanEnd = TimeSpanEnd[i]
-      }
+     TimeSpanEnd = TimeSpanEnd[modmod(i, length(TimeSpanEnd))] 
+       
       points[ind] = gsub("..repb..", TimeSpanEnd, points[ind])
     }
     else gsub("<end>..repb..</end>", "", points[ind])
@@ -1716,23 +1777,23 @@ if(is | ls | bs | lis){
       tmp$addIconStyle(styleid = sid, href = icon_href, color = icon_color, transparency = icon_transparency, scale = icon_scale, heading = icon_heading, xunits = icon_xunits, x = icon_x, yunits = icon_yunits, y = icon_y, colorMode = icon_colorMode )
     }
     if(bs){
-      if(is.null(icon_bgColor))icon_bgColor = "white"
-      if(is.null(icon_textColor))icon_textColor = "black"
-      if(is.null(icon_displayMode))icon_displayMode = "display"
+      if(is.null(bal_bgColor))bal_bgColor = "white"
+      if(is.null(bal_textColor))bal_textColor = "black"
+      if(is.null(bal_displayMode))bal_displayMode = "display"
       tmp$addBalloonStyle(styleid = sid, bgColor = bal_bgColor, textColor = bal_textColor, text = bal_textColor, displayMode = bal_displayMode)   
     }
     if(lis){
-      if(is.null(icon_color))icon_color = "red"
-      if(is.null(icon_transparency))icon_transparency = 1
-      if(is.null(icon_width))icon_width = 1
-      if(is.null(icon_labelVisibility))icon_labelVisibility = 0
+      if(is.null(line_color))line_color = "red"
+      if(is.null(line_transparency))line_transparency = 1
+      if(is.null(line_width))line_width = 1
+      if(is.null(line_labelVisibility))line_labelVisibility = 0
       tmp$addLineStyle(styleid = sid, color = line_color, transparency = line_transparency, width = line_width, outerColor = line_outerColor, outerTransparency = line_outerTransparency, outerPortion = line_outerPortion, colorMode = line_colorMode, labelVisibility = line_labelVisibility)
     }
     if(ls){
-      if(is.null(icon_color))icon_color = "red"
-      if(is.null(transparency))transparency = 1
-      if(is.null(colorMode))colorMode = "normal"
-      if(is.null(scale))scale = 1   
+      if(is.null(label_color))label_color = "red"
+      if(is.null(label_transparency))label_transparency = 1
+      if(is.null(label_colorMode))label_colorMode = "normal"
+      if(is.null(label_scale))label_scale = 1   
       tmp$addLabelStyle(styleid = sid, color = label_color, transparency = label_transparency, colorMode = label_colorMode, scale = label_scale)
     }
     
@@ -1743,10 +1804,8 @@ if(is | ls | bs | lis){
 
   ind = grep("styleUrl", points)
   if(!is.null(styleUrl)){
-    if(length(styleUrl) > 1){
-      if(i > length(styleUrl))styleUrl = styleUrl[i %% length(styleUrl)] 
-      else styleUrl = styleUrl[i]
-    }
+    styleUrl = styleUrl[modmod(i, length(styleUrl))] 
+     
     points[ind] = gsub("..rep..", styleUrl, points[ind])
     tmp = this
     while(!is.null(tmp$.parent)) tmp = tmp$.parent
@@ -1804,20 +1863,16 @@ else cor = paste(mx$lon[1], mx$lat[1], altitude, sep=",")
     
   ind = grep("Region", points)
   if(!is.null(Region)){
-    if(length(Region) > 1){
-      if(i > length(Region))Region = Region[i %% length(Region)] 
-      else Region = Region[i]
-    }
+    Region = Region[modmod(i, length(Region))] 
+    
     points[ind] = gsub("..rep..", Region, points[ind])
   }
   else points = points[-ind]
   
   ind = grep("ExtendedData", points)
   if(!is.null(ExtendedData)){
-    if(length(ExtendedData) > 1){
-      if(i > length(ExtendedData))ExtendedData = ExtendedData[i %% length(ExtendedData)] 
-      else ExtendedData = ExtendedData[i]
-    }
+    ExtendedData = ExtendedData[modmod(i, length(ExtendedData))] 
+      
     points[ind] = gsub("..rep..", ExtendedData, points[ind])
   }
   else points = points[-ind]
@@ -1870,7 +1925,7 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
   tryCatch({
     x = data.frame(x)
   }, error = function() {
-    print("Could not coerce x into dataframe.")
+    warning("Could not coerce x into dataframe.")
   })
   
   
@@ -1900,12 +1955,36 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
   tryCatch({
     x = data.frame(x)
   }, error = function() {
-    print("Could not coerce x into dataframe.")
+    warning("Could not coerce x into dataframe.")
   })
   
   
   #Get Frame for kml point
-  ppoints = linestring
+  ppoints = c( "<Placemark id='..rep..'>"                                       
+               ,"<name>..rep..</name>"                                           
+               ,"<visibility>1</visibility>"                                     
+               ,"<open>0</open>"                                                 
+               ,"<atom:author><atom:name>..rep..</atom:name></atom:author>"      
+               ,"<atom:link href='..rep..'/>"                                    
+               ,"<address>..rep..</address>"                                     
+               ,"<xal:AddressDetails>..rep..</xal:AddressDetails>"               
+               ,"<phoneNumber>..rep..</phoneNumber>"                             
+               ,"<Snippet maxLines='2'>..rep..</Snippet>"                        
+               ,"<description>..rep..</description>"                             
+               ,"<AbstractView>#..rep..</AbstractView>"                          
+               ,"<TimeStamp><when>..rep..</when></TimeStamp>"                    
+               ,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"
+               ,"<styleUrl>#..rep..</styleUrl>"                                  
+               ,"<Region>..rep..</Region>"                                       
+               ,"<ExtendedData>..rep..</ExtendedData>"                           
+               ,"<LineString id=\"ID\">"                                         
+               ,"<extrude>..rep..</extrude>"                                     
+               ,"<tessellate>..rep..</tessellate>"                               
+               ,"<gx:drawOrder>..rep..</gx:drawOrder>"                           
+               ,"<altitudeMode>clampToGround</altitudeMode>"                     
+               ,"<coordinates>..rep..</coordinates>"                             
+               ,"</LineString>"                                                  
+               ,"</Placemark>" )
   
   tx = split(x, x$pid)
 
@@ -2007,10 +2086,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
 
     if(!is.null(altitude)){
    
-      if(length(altitude) > 1){
-        if(i > length(altitude))altitude = altitude[i %% length(altitude)] 
-        else altitude = altitude[i]
-      }
+      altitude = altitude[modmod(i, length(altitude))] 
+      
       
       if(is.na(as.numeric(as.character(altitude)))) throw("altitude must be numeric or able to coerce to numeric ")
       altitude = as.numeric(as.character(altitude))
@@ -2021,10 +2098,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
 
     ind = grep("extrude", points)
     if(!is.null(extrude)){
-      if(length(extrude) > 1){
-        if(i > length(extrude))extrude = extrude[i %% length(extrude)] 
-        else extrude = extrude[i]
-      }
+      extrude = extrude[modmod(i, length(extrude))] 
+       
       extrude = as.numeric(as.character(extrude))
       if(! (extrude==0 | extrude==1)) throw("extrude must be either 0 or 1 (boolean)")
       points[ind] = gsub("..rep..", extrude, points[ind])
@@ -2034,10 +2109,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("tessellate", points)
     if(!is.null(tessellate)){
-      if(length(tessellate) > 1){
-        if(i > length(tessellate))tessellate = tessellate[i %% length(tessellate)] 
-        else tessellate = tessellate[i]
-      }
+     tessellate = tessellate[modmod(i, length(tessellate))] 
+       
       tessellate = as.numeric(as.character(tessellate))
       if(! (tessellate==0 | tessellate==1)) throw("tessellate must be either 0 or 1 (boolean)")
       points[ind] = gsub("..rep..", tessellate, points[ind])
@@ -2046,10 +2119,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("drawOrder", points)
     if(!is.null(drawOrder)){
-      if(length(drawOrder) > 1){
-        if(i > length(drawOrder))drawOrder = drawOrder[i %% length(drawOrder)] 
-        else drawOrder = drawOrder[i]
-      }
+      drawOrder = drawOrder[modmod(i, length(drawOrder))] 
+       
       drawOrder = as.numeric(as.character(drawOrder))
       points[ind] = gsub("..rep..", drawOrder, points[ind])
     }
@@ -2057,10 +2128,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     
     if(!is.null(altitudeMode)){
-      if(length(altitudeMode) > 1){
-        if(i > length(altitudeMode))altitudeMode = altitudeMode[i %% length(altitudeMode)] 
-        else altitudeMode = altitudeMode[i]
-      }
+      ialtitudeMode = altitudeMode[modmod(i, length(altitudeMode))] 
+       
       if(!altitudeMode %in% c("clampToGround", "relativeToGround", "absolute", "clampToSeaFloor", "relativeToSeaFloor"))
         throw("altitudeMode must be one of the following: clampToGround, relativeToGround, absolute, clampToSeaFloor, relativeToSeaFloor")
       ind = grep("altitudeMode", points)
@@ -2072,19 +2141,15 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("<name>", points)
     if(!is.null(name)){
-      if(length(name) > 1){
-        if(i > length(name))name = name[i %% length(name)] 
-        else name = name[i]
-      }
+      name = name[modmod(i, length(name))] 
+        
       points[ind] = gsub("..rep..", name, points[ind])
     }
     else points = points[-ind]
     
     if(!is.null(visibility)){
-      if(length(visibility) > 1){
-        if(i > length(visibility))visibility = visibility[i %% length(visibility)] 
-        else visibility = visibility[i]
-      }
+      visibility = visibility[modmod(i, length(visibility))] 
+       
       visibility = as.numeric(as.character(visibility))
       if(! (visibility==0 | visibility==1)) throw("visibility must be either 0 or 1 (boolean)")
      
@@ -2092,10 +2157,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
       points[ind] = gsub("0", visibility, points[ind])
     }
     if(!is.null(open)){
-      if(length(open) > 1){
-        if(i > length(open))open = open[i %% length(open)] 
-        else open = open[i]
-      }
+      open = open[modmod(i, length(open))] 
+       
       open = as.numeric(as.character(open))
       if(! (open==0 | open==1)) throw("open must be either 0 or 1 (boolean)")
       
@@ -2105,20 +2168,16 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("atom:author", points)
     if(!is.null(atomauthor)){
-      if(length(atomauthor) > 1){
-        if(i > length(atomauthor))atomauthor = atomauthor[i %% length(atomauthor)] 
-        else atomauthor = atomauthor[i]
-      }
+      atomauthor = atomauthor[modmod(i, length(atomauthor))] 
+       
       points[ind] = gsub("..rep..", atomauthor, points[ind])
     }
     else points = points[-ind]
     
     ind = grep("atom:link", points)
     if(!is.null(atomlinkhref)){
-      if(length(atomlinkhref) > 1){
-        if(i > length(atomlinkhref))atomlinkhref = atomlinkhref[i %% length(atomlinkhref)] 
-        else atomlinkhref = atomlinkhref[i]
-      }
+      atomlinkhref = atomlinkhref[modmod(i, length(atomlinkhref))] 
+      
       points[ind] = gsub("..rep..", atomlinkhref, points[ind])
     
     }
@@ -2126,10 +2185,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("xal:AddressDetails", points)
     if(!is.null(xalAddressDetails)){
-      if(length(xalAddressDetails) > 1){
-        if(i > length(xalAddressDetails))xalAddressDetails = xalAddressDetails[i %% length(xalAddressDetails)] 
-        else xalAddressDetails = xalAddressDetails[i]
-      }
+     xalAddressDetails = xalAddressDetails[modmod(i, length(xalAddressDetails))] 
+     
       points[ind] = gsub("..rep..", xalAddressDetails, points[ind])
     }
       else points = points[-ind]
@@ -2137,7 +2194,7 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     ind = grep("address", points)
     if(!is.null(address)){
       if(length(address) > 1){
-        if(i > length(address))address = address[i %% length(address)] 
+        if(i > length(address))address = address[modmod(i, length(address))] 
         else address = address[i]
       } 
       points[ind] = gsub("..rep..", address, points[ind])
@@ -2146,10 +2203,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("phoneNumber", points)
     if(!is.null(phoneNumber)){
-      if(length(phoneNumber) > 1){
-        if(i > length(phoneNumber))phoneNumber = phoneNumber[i %% length(phoneNumber)] 
-        else phoneNumber = phoneNumber[i]
-      } 
+     phoneNumber = phoneNumber[modmod(i,length(phoneNumber))] 
+      
       points[ind] = gsub("..rep..", phoneNumber, points[ind])
     }
       else points = points[-ind]
@@ -2157,10 +2212,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("Snippet", points)
     if(!is.null(Snippet)){
-      if(length(Snippet) > 1){
-        if(i > length(Snippet))Snippet = Snippet[i %% length(Snippet)] 
-        else Snippet = Snippet[i]
-      } 
+     Snippet = Snippet[modmod(i, length(Snippet))] 
+      
       Snippet = as.character(Snippet)
       maxlines = length(unlist(strsplit(Snippet, "\n")))
       points[ind] = gsub("2", maxlines, points[ind])
@@ -2171,10 +2224,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("description", points)
     if(!is.null(description)){
-      if(length(description) > 1){
-        if(i > length(description))description = description[i %% length(description)] 
-        else description = description[i]
-      } 
+     description = description[modmod(i, length(description))] 
+      
       points[ind] = gsub("..rep..", description, points[ind])
     }
       else points = points[-ind]
@@ -2182,10 +2233,8 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
    
    ind = grep("AbstractView", points)
    if(!is.null(AbstractView)){
-     if(length(AbstractView) > 1){
-       if(i > length(AbstractView))AbstractView = AbstractView[i %% length(AbstractView)] 
-       else AbstractView = AbstractView[i]
-     }
+     AbstractView = AbstractView[modmod(i, length(AbstractView))] 
+     
      
      tmp = this
      while(!is.null(tmp$.parent)) tmp = tmp$.parent
@@ -2200,10 +2249,7 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     #TODO Add time format check!
     ind = grep("TimeStamp", points)
     if(!is.null(TimeStamp)){
-      if(length(TimeStamp) > 1){
-        if(i > length(TimeStamp))TimeStamp = TimeStamp[i %% length(TimeStamp)] 
-        else TimeStamp = TimeStamp[i]
-      }
+      TimeStamp = TimeStamp[modmod(i, length(TimeStamp))] 
       points[ind] = gsub("..rep..", TimeStamp, points[ind])
     }
       else points = points[-ind]
@@ -2213,18 +2259,14 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     ind = grep("TimeSpan", points)
     if(!(is.null(TimeSpanStart) & is.null(TimeSpanEnd))){
       if(!is.null(TimeSpanStart)){
-        if(length(TimeSpanStart) > 1){
-          if(i > length(TimeSpanStart))TimeSpanStart = TimeSpanStart[i %% length(TimeSpanStart)] 
-          else TimeSpanStart = TimeSpanStart[i]
-        }
+        TimeSpanStart = TimeSpanStart[modmod(i, length(TimeSpanStart))] 
+         
         points[ind] = gsub("..repa..", TimeSpanStart, points[ind])
       }
       else gsub("<begin>..repa..</begin>", "", points[ind])
       if(!is.null(TimeSpanEnd)){
-        if(length(TimeSpanEnd) > 1){
-          if(i > length(TimeSpanEnd))TimeSpanEnd = TimeSpanEnd[i %% length(TimeSpanEnd)] 
-          else TimeSpanEnd = TimeSpanEnd[i]
-        }
+        TimeSpanEnd = TimeSpanEnd[modmod(i, length(TimeSpanEnd))] 
+         
         points[ind] = gsub("..repb..", TimeSpanEnd, points[ind])
       }
         else gsub("<end>..repb..</end>", "", points[ind])
@@ -2257,37 +2299,178 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
        while(!is.null(tmp$.parent)) tmp = tmp$.parent
        
        sid = paste("unnamed_style_", length(tmp$.styles[which(grepl("unnamed_style", names(tmp$.styles)))]), sep = "")
-       
+     
        if(is){
          if(is.null(icon_color)) icon_color = ""
+         else{
+           if(is.null(mx$icon_color)){
+             icon_color = icon_color[modmod(i, length(icon_color))]
+           }
+           else icon_color = mx$icon_color[1]
+         }
+         
          if(is.null(icon_transparency)) icon_transparency = 1
+         else{
+           if(is.null(mx$icon_transparency)){
+             icon_transparency = icon_transparency[modmod(i, length(icon_transparency))]
+           }
+           else icon_transparency = mx$icon_transparency[1]
+         }
+         
          if(is.null(icon_scale))icon_scale = 1
+         else{
+           if(is.null(mx$icon_scale)){
+            icon_scale = icon_scale[modmod(i, length(icon_scale))]
+           }
+           else icon_scale = mx$icon_scale[1]
+         }
+         
          if(is.null(icon_heading))icon_heading = 0
+         else{
+           if(is.null(mx$icon_heading)){
+             icon_heading = icon_heading[modmod(i, length(icon_heading))]
+           }
+           else icon_heading = mx$icon_heading[1]
+         }
+         
+         
          if(is.null(icon_xunits))icon_xunits = "fraction"
+         else{
+           if(is.null(mx$icon_xunits)){
+             icon_xunits = icon_xunits[modmod(i, length(icon_xunits))]
+           }
+           else icon_xunits = mx$icon_xunits[1]
+         }
+         
          if(is.null(icon_yunits))icon_yunits = "fraction"
+         else{
+           if(is.null(mx$icon_yunits)){
+             icon_yunits = icon_yunits[modmod(i, length(icon_yunits))]
+           }
+           else icon_yunits = mx$icon_yunits[1]
+         }
+         
          if(is.null(icon_x))icon_x = .5
+         else{
+           if(is.null(mx$icon_x)){
+             icon_x = icon_x[modmod(i, length(icon_x))]
+           }
+           else icon_x = mx$icon_x[1]
+         }
+         
          if(is.null(icon_y))icon_y = .5
+         else{
+           if(is.null(mx$icon_y)){
+             icon_y = icon_y[modmod(i, length(icon_y))]
+           }
+           else icon_y = mx$icon_y[1]
+         }
+         
          if(is.null(icon_colorMode))icon_colorMode = "normal"
+         else{
+           if(is.null(mx$icon_colorMode)){
+             icon_colorMode = icon_colorMode[modmod(i, length(icon_colorMode))]
+           }
+           else icon_colorMode = mx$icon_colorMode[1]
+         }
+         
          tmp$addIconStyle(styleid = sid, href = icon_href, color = icon_color, transparency = icon_transparency, scale = icon_scale, heading = icon_heading, xunits = icon_xunits, x = icon_x, yunits = icon_yunits, y = icon_y, colorMode = icon_colorMode )
        }
        if(bs){
-         if(is.null(icon_bgColor))icon_bgColor = "white"
-         if(is.null(icon_textColor))icon_textColor = "black"
-         if(is.null(icon_displayMode))icon_displayMode = "display"
-         tmp$addBalloonStyle(styleid = sid, bgColor = bal_bgColor, textColor = bal_textColor, text = bal_textColor, displayMode = bal_displayMode)   
+         if(is.null(bal_bgColor))bal_bgColor = "white"
+         else{
+           if(is.null(mx$bal_bgColor)){
+             bal_bgColor = bal_bgColor[modmod(i, length(bal_bgColor))]
+           }
+           else bal_bgColor = mx$bal_bgColor[1]
+         }
+         
+         if(is.null(bal_textColor))bal_textColor = "black"
+         else{
+           if(is.null(mx$bal_textColor)){
+             bal_textColor = bal_textColor[modmod(i, length(bal_textColor))]
+           }
+           else bal_textColor = mx$bal_textColor[1]
+         }
+         
+        if(is.null(bal_displayMode))bal_displayMode = "display"
+        else{
+          if(is.null(mx$bal_displayMode)){
+           bal_displayMode = bal_displayMode[modmod(i, length(bal_displayMode))]
+          }
+          else bal_displayMode = mx$bal_displayMode[1]
+        }
+        
+          tmp$addBalloonStyle(styleid = sid, bgColor = bal_bgColor, textColor = bal_textColor, text = bal_textColor, displayMode = bal_displayMode)   
        }
        if(lis){
-         if(is.null(icon_color))icon_color = "red"
-         if(is.null(icon_transparency))icon_transparency = 1
-         if(is.null(icon_width))icon_width = 1
-         if(is.null(icon_labelVisibility))icon_labelVisibility = 0
-         tmp$addLineStyle(styleid = sid, color = line_color, transparency = line_transparency, width = line_width, outerColor = line_outerColor, outerTransparency = line_outerTransparency, outerPortion = line_outerPortion, colorMode = line_colorMode, labelVisibility = line_labelVisibility)
+         if(is.null(line_color))line_color = "red"
+         else{
+           if(is.null(mx$line_color)){
+            line_color = line_color[modmod(i, length(line_color))]
+           }
+           else line_color = mx$line_color[1]
+         }
+         
+           if(is.null(line_transparency))line_transparency = 1
+         else{
+           if(is.null(mx$line_transparency)){
+            line_transparency = line_transparency[modmod(i, length(line_transparency))]
+           }
+           else line_transparency = mx$line_transparency[1]
+         }
+         
+           if(is.null(line_width))line_width = 1
+         else{
+           if(is.null(mx$line_width)){
+             line_width = line_width[modmod(i, length(line_width))]
+           }
+           else line_width = mx$line_width[1]
+         }
+         
+           if(is.null(line_labelVisibility))line_labelVisibility = 0
+         else{
+           if(is.null(mx$line_labelVisibility)){
+            line_labelVisibility = line_labelVisibility[modmod(i, length(line_labelVisibility))]
+           }
+           else line_labelVisibility = mx$line_labelVisibility[1]
+         }
+         
+           tmp$addLineStyle(styleid = sid, color = line_color, transparency = line_transparency, width = line_width, outerColor = line_outerColor, outerTransparency = line_outerTransparency, outerPortion = line_outerPortion, colorMode = line_colorMode, labelVisibility = line_labelVisibility)
        }
        if(ls){
-         if(is.null(icon_color))icon_color = "red"
-         if(is.null(transparency))transparency = 1
-         if(is.null(colorMode))colorMode = "normal"
-         if(is.null(scale))scale = 1   
+         if(is.null(label_color))label_color = "red"
+         else{
+           if(is.null(mx$label_color)){
+            label_color = label_color[modmod(i, length(label_color))]
+           }
+           else label_color = mx$label_color[1]
+         }
+         
+           if(is.null(label_transparency))label_transparency = 1
+         else{
+           if(is.null(mx$label_transparency)){
+            label_transparency = label_transparency[modmod(i, length(label_transparency))]
+           }
+           else label_transparency = mx$label_transparency[1]
+         }
+         
+           if(is.null(label_colorMode))label_colorMode = "normal"
+         else{
+           if(is.null(mx$label_colorMode)){
+             label_colorMode = label_colorMode[modmod(i, length(label_colorMode))]
+           }
+           else label_colorMode = mx$label_colorMode[1]
+         }
+         
+           if(is.null(label_scale))scale = 1   
+         else{
+           if(is.null(mx$label_scale)){
+            label_scale = label_scale[modmod(i, length(label_scale))]
+           }
+           else label_scale = mx$label_scale[1]
+         }
+         
          tmp$addLabelStyle(styleid = sid, color = label_color, transparency = label_transparency, colorMode = label_colorMode, scale = label_scale)
        }
        
@@ -2300,10 +2483,15 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("styleUrl", points)
     if(!is.null(styleUrl)){
-      if(length(styleUrl) > 1){
-        if(i > length(styleUrl))styleUrl = styleUrl[i %% length(styleUrl)] 
-        else styleUrl = styleUrl[i]
-      }
+        
+        if(is.null(mx$styleUrl)){
+          styleUrl = styleUrl[modmod(i, length(styleUrl))]
+        }  
+        else styleUrl = mx$styleUrl[1]
+        
+        
+    
+      
       points[ind] = gsub("..rep..", styleUrl, points[ind])
       tmp = this
       while(!is.null(tmp$.parent)) tmp = tmp$.parent
@@ -2339,30 +2527,40 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
     
     ind = grep("Region", points)
     if(!is.null(Region)){
-      if(length(Region) > 1){
-        if(i > length(Region))Region = Region[i %% length(Region)] 
-        else Region = Region[i]
-      }
+      if(is.null(mx$Region)){
+        Region = Region[modmod(i, length(Region))] 
+      }  
+      else Region = mx$Region[1]
+       
+     
       points[ind] = gsub("..rep..", Region, points[ind])
     }
       else points = points[-ind]
 
     ind = grep("ExtendedData", points)
     if(!is.null(ExtendedData)){
-      if(length(ExtendedData) > 1){
-        if(i > length(ExtendedData))ExtendedData = ExtendedData[i %% length(ExtendedData)] 
-        else ExtendedData = ExtendedData[i]
-      }
+      if(is.null(mx$ExtendedData)){
+        ExtendedData = ExtendedData[modmod(i, length(ExtendedData))] 
+        
+      }  
+      else ExtendedData = mx$ExtendedData[1]
+      
+      
       points[ind] = gsub("..rep..", ExtendedData, points[ind])
     }
       else points = points[-ind]
     
     
    #New 2015. define containing folder   
-   
+
    if(!is.null(inFolder)){
+     if(is.null(mx$inFolder)){
      
+       inFolder = inFolder[modmod(i, length(inFolder))] 
+     }
+     else inFolder = mx$inFolder[1]
      ssp = unlist(strsplit(as.character(inFolder), "/"))
+ 
      ftmp = this
      while(!is.null(ftmp$.parent)) ftmp = ftmp$.parent
      for(k in 1:length(ssp)){
@@ -2417,7 +2615,7 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
 setMethodS3("addGroundOverlay", "RKmlFolder", function(this, fn = NULL, east=NA, west=NA, north=NA, south=NA, x = NULL, ...) {
   args = list(...)
 
-  print(x)
+
   
 if(is.null(x)){
   x = data.frame(fn, east, west, north, south)
@@ -2431,7 +2629,7 @@ if(is.null(fn) & is.null(x$fn))throw("If fn is not supplied, you must supply a d
 tryCatch({
   x = data.frame(x)
 }, error = function() {
-  print("Could not coerce x into dataframe.")
+  warning("Could not coerce x into dataframe.")
 })
 
 if(is.null(x$fn)) x$fn = fn
@@ -2447,8 +2645,32 @@ unfn = unique(x$fn)
 
 
 #Get Frame for kml point
-mpoints = groundoverlay
-print(x)
+mpoints = c("<GroundOverlay id=\"ID\">"                                           
+,"<name>..rep..</name>"                                                
+,"<visibility>1</visibility>"                                          
+,"<open>0</open>"                                                      
+,"<atom:author><atom:name>..rep..</atom:name></atom:author>"           
+,"<atom:link href=\"..rep..\"/>"                                       
+,"<address>..rep..</address>"                                          
+,"<xal:AddressDetails>..rep..</xal:AddressDetails>  <!-- xmlns:xal -->"
+,"<phoneNumber>..rep..</phoneNumber>"                                  
+,"<Snippet maxLines='2'>..rep..</Snippet>"                             
+,"<description>..rep..</description>"                                  
+,"<AbstractView>#..rep..</AbstractView>"                               
+,"<TimeStamp><when>..rep..</when></TimeStamp>"                         
+,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"     
+,"<styleUrl>#..rep..</styleUrl>"                                       
+,"<Region>..rep..</Region>"                                            
+,"<ExtendedData>..rep..</ExtendedData>"                                
+,"<color>..rep..</color>"                                              
+,"<drawOrder>..rep..</drawOrder>"                                      
+,"<Icon>..rep..</Icon>"                                                
+,"<altitude>0</altitude>"                                              
+,"<altitudeMode>clampToGround</altitudeMode>"                          
+,"<LatLonBox>..rep..</LatLonBox>"                                      
+,"<gx:LatLonQuad><coordinates>..rep..</coordinates></gx:LatLonQuad>"   
+,"</GroundOverlay>")  
+
 for(i in 1:nrow(x)){
   
   
@@ -2572,9 +2794,32 @@ for(i in 1:nrow(x)){
   }
   
   #Get Frame for kml point
-  points = mpoints
-  
-  
+  points = c( "<GroundOverlay id=\"ID\">"                                           
+              ,"<name>..rep..</name>"                                                
+              ,"<visibility>1</visibility>"                                          
+              ,"<open>0</open>"                                                      
+              ,"<atom:author><atom:name>..rep..</atom:name></atom:author>"           
+              ,"<atom:link href=\"..rep..\"/>"                                       
+              ,"<address>..rep..</address>"                                          
+              ,"<xal:AddressDetails>..rep..</xal:AddressDetails>  <!-- xmlns:xal -->"
+              ,"<phoneNumber>..rep..</phoneNumber>"                                  
+              ,"<Snippet maxLines='2'>..rep..</Snippet>"                             
+              ,"<description>..rep..</description>"                                  
+              ,"<AbstractView>#..rep..</AbstractView>"                               
+              ,"<TimeStamp><when>..rep..</when></TimeStamp>"                         
+              ,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"     
+              ,"<styleUrl>#..rep..</styleUrl>"                                       
+              ,"<Region>..rep..</Region>"                                            
+              ,"<ExtendedData>..rep..</ExtendedData>"                                
+              ,"<color>..rep..</color>"                                              
+              ,"<drawOrder>..rep..</drawOrder>"                                      
+              ,"<Icon>..rep..</Icon>"                                                
+              ,"<altitude>0</altitude>"                                              
+              ,"<altitudeMode>clampToGround</altitudeMode>"                          
+              ,"<LatLonBox>..rep..</LatLonBox>"                                      
+              ,"<gx:LatLonQuad><coordinates>..rep..</coordinates></gx:LatLonQuad>"   
+              ,"</GroundOverlay>"   )
+    
   ind = grep("altitude", points) 
     if(!is.null(altitude)){
    
@@ -2716,7 +2961,7 @@ for(i in 1:nrow(x)){
     ind = grep("LatLonBox", points)
     points[ind] = gsub("..rep..",box, points[ind])
     
-  print(box)
+
   ##<For non-rectangular image overlays. Not currently supported
   qbox = NULL
   ind = grep("LatLonQuad", points)
@@ -2864,8 +3109,32 @@ setMethodS3("addScreenOverlay", "RKmlFolder", function(this, fn = NULL, ...) {
   
   
   #Get Frame for kml point
-  points = screenoverlay
-  
+  points = c( "<ScreenOverlay id=\"ID\">"                                                    
+              ,"<name>..rep..</name>"                                                         
+              ,"<visibility>1</visibility>"                                                   
+              ,"<open>0</open>"                                                               
+              ,"<atom:author><atom:name>..rep..</atom:name></atom:author>"                    
+              ,"<atom:link href=\"..rep..\"/>"                                                
+              ,"<address>..rep..</address>"                                                   
+              ,"<xal:AddressDetails>..rep..</xal:AddressDetails>  <!-- xmlns:xal -->"         
+              ,"<phoneNumber>..rep..</phoneNumber>"                                           
+              ,"<Snippet maxLines='2'>..rep..</Snippet>"                                      
+              ,"<description>..rep..</description>"                                           
+              ,"<AbstractView>#..rep..</AbstractView>"                                        
+              ,"<TimeStamp><when>..rep..</when></TimeStamp>"                                  
+              ,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"              
+              ,"<styleUrl>#..rep..</styleUrl>"                                                
+              ,"<Region>..rep..</Region>"                                                     
+              ,"<ExtendedData>..rep..</ExtendedData>"                                         
+              ,"<color>..rep..</color>"                                                       
+              ,"<drawOrder>..rep..</drawOrder>"                                               
+              ,"<Icon>..rep..</Icon>"                                                         
+              ,"<overlayXY x='..repx..' y='..repy..' xunits='..repxu..' yunits='..repyu..'/>" 
+              ,"<screenXY x='..repx..' y='..repy..' xunits='..repxu..' yunits='..repyu..'/>"  
+              ,"<rotationXY x='..repx..' y='..repy..' xunits='..repxu..' yunits='..repyu..'/>"
+              ,"<size x='..repx..' y='..repy..' xunits='..repxu..' yunits='..repyu..'/>"      
+              ,"<rotation>..rep..</rotation>"                                                 
+              ,"</ScreenOverlay>"  )
   
   ind = grep("/rotation", points, fixed = T) 
   if(!is.null(rotation)){
@@ -3100,11 +3369,11 @@ setMethodS3("addScreenOverlay", "RKmlFolder", function(this, fn = NULL, ...) {
 })
 setMethodS3("getFolder", "RKmlFolder", function(this, fid, ...) {
   if(is.null(this$.folders[[fid]])){
-    print(paste("Folder '", fid, "' in '", this$.id, "' does not exist", sep = ""))
+    message(paste("Folder '", fid, "' in '", this$.id, "' does not exist", sep = ""))
     return(NULL)
   }
   else{
-    print(paste("get Folder '", fid, "' from '", this$.id, "'", sep = "") )
+    message(paste("get Folder '", fid, "' from '", this$.id, "'", sep = "") )
     return(this$.folders[[fid]])
   }
 })
@@ -3112,7 +3381,7 @@ setMethodS3("addFolder", "RKmlFolder", function(this, fid, ...) {
   
   
   if(!is.null(this$.folders[[fid]]))
-    print("This file alreadys exists at this location. You can add to this folder with getFolder(id)$add.. or you can remove it with removeFolder(id).") 
+    message("This file alreadys exists at this location. You can add to this folder with getFolder(id)$add.. or you can remove it with removeFolder(id).") 
   else{
     newfol = RKmlFolder(id = fid, parent = this)
   
@@ -3141,9 +3410,24 @@ setMethodS3("addFolder", "RKmlFolder", function(this, fid, ...) {
     
     #Assign values to variables
     
-    points =folder
-    
-   
+    points = c("<Folder id='..rep..'>"                                          
+               ,"<name>..rep..</name>"                                           
+               ,"<visibility>1</visibility>"                                     
+               ,"<open>0</open>"                                                 
+               ,"<atom:author><atom:name>..rep..</atom:name></atom:author>"      
+               ,"<atom:link href='..rep..'/>"                                    
+               ,"<address>..rep..</address>"                                     
+               ,"<xal:AddressDetails>..rep..</xal:AddressDetails>"               
+               ,"<phoneNumber>..rep..</phoneNumber>"                             
+               ,"<Snippet maxLines='2'>..rep..</Snippet>"                        
+               ,"<description>..rep..</description>"                             
+               ,"<AbstractView>#..rep..</AbstractView>"                          
+               ,"<TimeStamp><when>..rep..</when></TimeStamp>"                    
+               ,"<TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan>"
+               ,"<styleUrl>#..rep..</styleUrl>"                                  
+               ,"<Region>..rep..</Region>"                                       
+               ,"<ExtendedData>..rep..</ExtendedData>"        )
+       
     if(length(args)>0){
       for(j in 1:length(args)){
         assign(names(args[j]), args[[j]][1]) 
@@ -3260,12 +3544,12 @@ setMethodS3("addFolder", "RKmlFolder", function(this, fid, ...) {
     newfol$.foldertxt = points
     
     this$.folders[[fid]] = newfol
-    print(paste("Folder '", fid, "' to '", this$.id, "' Added", sep = ""))
+    message(paste("Folder '", fid, "' to '", this$.id, "' Added", sep = ""))
   }
 })
 setMethodS3("removeFolder", "RKmlFolder", function(this, fid, ...) {
   this$.folders[[fid]] = NULL
-  print(paste("folder '", fid, "' removed from '", this$.id, "'", sep = ""))
+  message(paste("folder '", fid, "' removed from '", this$.id, "'", sep = ""))
 })
 setMethodS3("removeStyle", "RKmlFolder", function(this, styleid = NULL, styletype = NULL,  ...) {
   tmp = this
@@ -3274,7 +3558,7 @@ setMethodS3("removeStyle", "RKmlFolder", function(this, styleid = NULL, styletyp
   if(is.null(styleid)) throw("You must suppply the styleid to remove, mykmlobj$listStyles()")
   if(is.null(styletype)){ 
     tmp$.styles[[styleid]] = NULL
-    print(paste("Style '", styleid, "' removed", sep = ""))
+    message(paste("Style '", styleid, "' removed", sep = ""))
   }
   else{
     st = c("PolyStyle", "IconStyle", "LineStyle", "BalloonStyle", "LabelStyle")
@@ -3283,7 +3567,7 @@ setMethodS3("removeStyle", "RKmlFolder", function(this, styleid = NULL, styletyp
     ind = grep(styletype, temp)[1]
     if(!is.na(ind))temp = temp[-ind]
     tmp$.styles[[styleid]] = temp
-    print(paste(styletype, " removed from Style '", styleid, ".", sep = ""))
+    message(paste(styletype, " removed from Style '", styleid, ".", sep = ""))
   }
 
 })
@@ -3291,7 +3575,7 @@ setMethodS3("liststyles", "RKmlFolder", function(this, ...) {
   tmp = this
   while(!is.null(tmp$.parent)) tmp = tmp$.parent
   for(i in 1:length(tmp$.styles)){
-    print(names(mykml$.styles)[i])
+
     st = tmp$.styles[[i]]
     j = 2
     while(j < length(st)){
@@ -3311,7 +3595,36 @@ setMethodS3("addNetworkLink", "RKmlFolder", function(this, href = NULL, ...) {
   if(is.null(href))throw("You must specify the local or network address href argument")
  
   #Get Frame for kml point
-  mpoints = networklink
+  mpoints = c( "<NetworkLink id='..rep..'>"                                                                    
+               ,"<name>..rep..</name>"                                                                          
+               ,"<visibility>1</visibility>"                                                                    
+               ,"<open>0</open>"                                                                                
+               ,"<atom:author><atom:name>..rep..</atom:name></atom:author>"                                     
+               ,"<atom:link href='..rep..'/>"                                                                   
+               ,"<address>..rep..</address>"                                                                    
+               ,"<xal:AddressDetails>..rep..</xal:AddressDetails>"                                              
+               ,"<phoneNumber>..rep..</phoneNumber>"                                                            
+               ,"<Snippet maxLines='2'>..rep..</Snippet>"                                                       
+               ,"<description>..rep..</description>"                                                            
+               ,"<AbstractView>#..rep..</AbstractView>"                                                         
+               ,"<TimePrimitive><TimeStamp><when>..rep..</when></TimeStamp></TimePrimitive>"                    
+               ,"<TimePrimitive><TimeSpan><begin>..repa..</begin><end>..repb..</end></TimeSpan></TimePrimitive>"
+               ,"<styleUrl>#..rep..</styleUrl>"                                                                 
+               ,"<Region>..rep..</Region>"                                                                      
+               ,"<ExtendedData>..rep..</ExtendedData>"                                                          
+               ,"<refreshVisibility>..rep..</refreshVisibility>"                                                
+               ,"<flyToView>..rep..</flyToView>"                                                                
+               ,"<Link>"                                                                                        
+               ,"<href>..rep..</href>"                                                                          
+               ,"<refreshMode>..rep..</refreshMode>"                                                            
+               ,"<refreshInterval>..rep..</refreshInterval>"                                                    
+               ,"<viewRefreshMode>..rep..</viewRefreshMode>"                                                    
+               ,"<viewRefreshTime>..rep..</viewRefreshTime>"                                                    
+               ,"<viewBoundScale>..rep..</viewBoundScale>"                                                      
+               ,"<viewFormat>..rep..</viewFormat>"                                                              
+               ,"<httpQuery>..rep..</httpQuery>"                                                                
+               ,"</Link>"                                                                                       
+               ,"</NetworkLink>")
     #Variable list
 
        
@@ -3354,7 +3667,6 @@ setMethodS3("addNetworkLink", "RKmlFolder", function(this, href = NULL, ...) {
     points = mpoints
     if(length(args)>0){
       for(j in 1:length(args)){
-      #  print(names(args[j]))
         assign(names(args[j]), args[[j]][1]) 
       }
     }
@@ -3609,7 +3921,18 @@ setMethodS3("addNetworkLink", "RKmlFolder", function(this, href = NULL, ...) {
 })
 setMethodS3("addNetworkLinkControl", "RKmlFolder", function(this, minRefreshPeriod =NULL, maxSessionLength = -1, cookie = NULL, message = NULL, linkName = NULL, linkDescription = NULL, linkSnippet = NULL, expires = NULL, update = NULL, AbstractView = NULL, ...) {
  
-  style = networklinkcontroll
+  style = c( "<NetworkLinkControl>"                             
+             ,"<minRefreshPeriod>..rep..</minRefreshPeriod>"     
+             ,"<maxSessionLength>..rep..</maxSessionLength>"     
+             ,"<cookie>..rep..</cookie>"                         
+             ,"<message>..rep..</message>"                       
+             ,"<linkName>..rep..</linkName>"                     
+             ,"<linkDescription>..rep..</linkDescription>"       
+             ,"<linkSnippet maxLines=\"2\">..rep..</linkSnippet>"
+             ,"<expires>..rep..</expires>"                       
+             ,"<Update>..rep..</Update>"                         
+             ,"<AbstractView>#..rep..</AbstractView>"            
+             ,"</NetworkLinkControl>")
 
   ind = grep("minRefreshPeriod", style)
   if(!is.null(minRefreshPeriod)){
@@ -3738,7 +4061,7 @@ setMethodS3("writekml", "RKmlFolder", function(this, path, ...) {
   end = "</Document></kml>"
   writeLines(end, zz)
   close(zz)
-  print(paste("kml saved at", path))
+  message(paste("kml saved at", path))
 
 
 })
@@ -3812,3 +4135,10 @@ color2kmlcolor = function(color = "", transparency = 1) {
   }
 return(color)
 } 
+modmod = function(veclen = 0, cyclelen = 0) {
+  x = veclen %% cyclelen
+  if(x == 0) x = cyclelen
+  
+  return(x)
+  
+}

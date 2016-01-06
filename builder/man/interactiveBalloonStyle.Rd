@@ -1,4 +1,4 @@
-\name{interactiveBalloonStyle, interactiveBalloonStyle.RKmlFolder}
+\name{interactiveBalloonStyle}
 \alias{interactiveBalloonStyle}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{

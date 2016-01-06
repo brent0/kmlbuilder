@@ -1,4 +1,4 @@
-\name{removeStyle, removeStyle.RkmlFolder}
+\name{removeStyle}
 \alias{removeStyle}
 
 %- Also NEED an '\alias' for EACH other topic documented here.

@@ -3,9 +3,7 @@
 \alias{kmlbuilder-package}
 \alias{kmlbuilder}
 \docType{package}
-\title{
-Create Keyhole Markup Language from R
-}
+\title{Create Keyhole Markup Language from R}
 \description{
 This package can be used to quickly create kml documents within R. You can easily create simple kml's with little or no styles, or, you can build much more complex kmls that have multiple features, folders and styles. This package supports most of the topics described in the kml reference document found here: https://developers.google.com/kml/documentation/kmlreference.   
 }
@@ -13,9 +11,9 @@ This package can be used to quickly create kml documents within R. You can easil
 \tabular{ll}{
 Package: \tab kmlbuilder\cr
 Type: \tab Package\cr
-Version: \tab 1.1.5\cr
-Date: \tab 2014-05-22\cr
-License: \tab MIT\cr
+Version: \tab 1.1.7\cr
+Date: \tab 2015-05-28\cr
+License: \tab GPL-3\cr
 }
 Use this package if you would like to quickly generate kml documents from data stored in common R data structures
 }
@@ -26,8 +24,8 @@ Maintainer: brentcameron1@gmail.com
 
 }
 \references{
-\href{http:\/\/www.google.com/earth/download/ge/agree.html}{Google Earth Download}
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference}{KML Reference}
+\href{http://www.google.com/earth/download/ge/agree.html}{Google Earth Download}
+\href{https://developers.google.com/kml/documentation/kmlreference}{KML Reference}
 }
 
 \keyword{ package }

@@ -1,4 +1,4 @@
-\name{addGroundOverlay, addGroundOverlay.RkmlFolder}
+\name{addGroundOverlay}
 \alias{addGroundOverlay}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -50,9 +50,9 @@ addGroundOverlay(fn = pathtosimpleimage, east = maxlon, west = minlon, north = m
 
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#groundoverlay}{KML groundoverlay Reference} \cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
-\href{http:\/\/www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
+\href{https://developers.google.com/kml/documentation/kmlreference\#groundoverlay}{KML groundoverlay Reference} \cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
+\href{http://www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
 
 }
 \author{
@@ -70,7 +70,7 @@ For advanced description arguments, wrap html in CDATA tags. You can use package
 \code{<font face='Courier'>Example Text</font>}\cr
 \code{]]>''}\cr
 \cr
-      See also: \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
+      See also: \href{https://developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
       
 }
 \examples{

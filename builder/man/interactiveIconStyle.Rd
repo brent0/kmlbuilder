@@ -1,4 +1,4 @@
-\name{interactiveIconStyle, interactiveIconStyle.RKmlFolder}
+\name{interactiveIconStyle}
 \alias{interactiveIconStyle}
 \title{
 Interactively Create IconStyle

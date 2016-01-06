@@ -1,4 +1,4 @@
-\name{addBalloonStyle, addBalloonStyle.RKmlFolder}
+\name{addBalloonStyle}
 \alias{addBalloonStyle}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -32,7 +32,7 @@ Either "display" or "hide". Choose weather balloon will be displayed. (Default: 
 Does not return a value, simply adds style to kml objects style list
 }
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#balloonstyle}{KML balloonStyle Reference}
+\href{https://developers.google.com/kml/documentation/kmlreference\#balloonstyle}{KML balloonStyle Reference}
 }
 \author{
 Brent Cameron\cr

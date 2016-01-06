@@ -1,4 +1,4 @@
-\name{addLineStyle, addLineStyle.RkmlFolder}
+\name{addLineStyle}
 \alias{addLineStyle}
 \title{
 Add LineStyle to KML Object
@@ -28,7 +28,7 @@ Mandatory. Define the id for this style. kml features will need to reference thi
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#linestyle}{KML lineStyle Reference}
+\href{https://developers.google.com/kml/documentation/kmlreference\#linestyle}{KML lineStyle Reference}
 }
 \author{
 Brent Cameron\cr
@@ -37,7 +37,7 @@ Population Ecology Division
 }
 \note{
 \strong{colorMode}\cr
-see \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#colormode}{color Mode}\cr
+see \href{https://developers.google.com/kml/documentation/kmlreference\#colormode}{color Mode}\cr
 
 \strong{styleid}\cr
  Do not attempt to define more than one linestyle for the same styleid.

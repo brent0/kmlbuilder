@@ -1,4 +1,4 @@
-\name{styleBuilder, styleBuilder.RkmlFolder}
+\name{styleBuilder}
 \alias{styleBuilder}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{

@@ -1,4 +1,4 @@
-\name{preview, preview.RkmlFolder}
+\name{preview}
 \alias{preview}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -14,7 +14,7 @@ yourkml$preview()
 
 
 \references{
-\href{http:\/\/www.google.com/earth/download/ge/agree.html}{Google Earth Download}
+\href{http://www.google.com/earth/download/ge/agree.html}{Google Earth Download}
 }
 \author{
 Brent Cameron\cr

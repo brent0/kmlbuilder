@@ -1,4 +1,4 @@
-\name{interactivePolyStyle, interactivePolyStyle.RkmlFolder}
+\name{interactivePolyStyle}
 \alias{interactivePolyStyle}
 \title{
 Interactively Create PolyStyle

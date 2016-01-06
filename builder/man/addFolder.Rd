@@ -1,4 +1,4 @@
-\name{addFolder, getFolder, removeFolder,  addFolder.RkmlFolder, getFolder.RkmlFolder, removeFolder.RkmlFolder}
+\name{addFolder, getFolder, removeFolder}
 \alias{addFolder, getFolder, removeFolder}
 
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -40,9 +40,9 @@ Mandatory. Define the id for this folder. The id will be used to specify where f
      \item{ExtendedData}{Currently not supported}
      }
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#folder}{KML Folder Reference } \cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
-\href{http:\/\/www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails Details}
+\href{https://developers.google.com/kml/documentation/kmlreference\#folder}{KML Folder Reference } \cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
+\href{http://www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails Details}
 
 }
 
@@ -61,7 +61,7 @@ For advanced description arguments, wrap html in CDATA tags. You can use package
 \code{<font face='Courier'>Example Text</font>}\cr
 \code{]]>''}\cr
 \cr
-      See also: \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
+      See also: \href{https://developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
       
 }
 

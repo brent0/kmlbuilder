@@ -1,4 +1,4 @@
-\name{addAbstractView, addAbstractView.RkmlFolder}
+\name{addAbstractView}
 \alias{addAbstractView}
 \title{
 Add Abstract view to KML Object
@@ -44,9 +44,9 @@ Mandatory. Define the id for this styleview. kml elements will need to reference
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#abstractview}{KML abstractView Reference}\cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#camera}{KML camera Reference}\cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#lookat}{KML lookat Reference}
+\href{https://developers.google.com/kml/documentation/kmlreference\#abstractview}{KML abstractView Reference}\cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#camera}{KML camera Reference}\cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#lookat}{KML lookat Reference}
 
 }
 \author{

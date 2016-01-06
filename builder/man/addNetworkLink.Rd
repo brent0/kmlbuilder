@@ -1,4 +1,4 @@
-\name{addNetworkLink, addNetworkLink.RkmlFolder}
+\name{addNetworkLink}
 \alias{addNetworkLink}
 \title{
 Add NetworkLink
@@ -48,11 +48,11 @@ yourKMLobj$addNetworkLink(href, refreshVisibility, flyToView, refreshMode, refre
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#networklink}{KML networklink Reference}\cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#Link}{KML Link Reference}\cr
-\href{http:\/\/geochalkboard.wordpress.com/2007/09/20/the-kml-behind-network-links/}{Network Link Additional Info}\cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
-\href{http:\/\/www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
+\href{https://developers.google.com/kml/documentation/kmlreference\#networklink}{KML networklink Reference}\cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#Link}{KML Link Reference}\cr
+\href{http://geochalkboard.wordpress.com/2007/09/20/the-kml-behind-network-links/}{Network Link Additional Info}\cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
+\href{http://www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
 
 }
 \author{
@@ -71,12 +71,12 @@ For advanced description arguments, wrap html in CDATA tags. You can use package
 \code{<font face='Courier'>Example Text</font>}\cr
 \code{]]>''}\cr
 \cr
-      See also: \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
+      See also: \href{https://developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
       
 \strong{viewFormat}\cr
       \code{if viewRefreshMode of onStop, defaults to BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]}\cr
       
-      You can also specify a custom set of viewing parameters. See \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#Link}{KML Link Reference}
+      You can also specify a custom set of viewing parameters. See \href{https://developers.google.com/kml/documentation/kmlreference\#Link}{KML Link Reference}
  
       
       

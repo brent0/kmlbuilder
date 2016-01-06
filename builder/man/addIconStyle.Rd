@@ -1,4 +1,4 @@
-\name{addIconStyle, addIconStyle.RkmlFolder}
+\name{addIconStyle}
 \alias{addIconStyle}
 \title{
 Add IconStyle to KML Object
@@ -32,7 +32,7 @@ Mandatory. Define the id for this style. kml features will need to reference thi
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#iconstyle}{KML iconStyle Reference}
+\href{https://developers.google.com/kml/documentation/kmlreference\#iconstyle}{KML iconStyle Reference}
 }
 \author{
 Brent Cameron\cr
@@ -41,7 +41,7 @@ Population Ecology Division
 }
 \note{
 \strong{colorMode}\cr
-see \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#colormode}{KML colorMode Reference}
+see \href{https://developers.google.com/kml/documentation/kmlreference\#colormode}{KML colorMode Reference}
 \cr
 
 \strong{styleid}\cr

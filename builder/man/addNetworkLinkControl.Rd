@@ -1,4 +1,4 @@
-\name{addNetworkLinkControl, addNetworkLinkControl.RkmlFolder}
+\name{addNetworkLinkControl}
 \alias{addNetworkLinkControl}
 \title{
 Add NetworkLink Control
@@ -28,8 +28,8 @@ yourKMLobj$addNetworkLinkControl(minRefreshPeriod, maxSessionLength, cookie, mes
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#networklinkcontrol}{KML networkLinkControll Reference}
-\href{http:\/\/geochalkboard.wordpress.com/2007/09/20/the-kml-behind-network-links/}{Network Link Aditional Info}
+\href{https://developers.google.com/kml/documentation/kmlreference\#networklinkcontrol}{KML networkLinkControll Reference}
+\href{http://geochalkboard.wordpress.com/2007/09/20/the-kml-behind-network-links/}{Network Link Aditional Info}
 }
 \author{
 Brent Cameron\cr
@@ -55,9 +55,6 @@ clientkml = RKmlObject()
 #kml client will attempt to refresh every second but will fail due to hosts minRefreshPeriod
 clientkml$addNetworkLink(href = "hostkml.kml",flyToView = 1, refreshMode = "onInterval", refreshInterval = 1)
 #clientkml$preview()
-
-#Wait a few seconds so that google dosn't try to load this one first
-Sys.sleep(10)
 
 #Change the abstract view, should update in the preview of the clientkml after 20 seconds from the clientkml #linking to the host kml
 

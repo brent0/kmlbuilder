@@ -1,4 +1,4 @@
-\name{addListStyle, addListStyle.RkmlFolder}
+\name{addListStyle}
 \alias{addListStyle}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -25,7 +25,7 @@ Mandatory. Define the id for this style. kml containers will need to reference t
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#polystyle}{KML polyStyle Reference}
+\href{https://developers.google.com/kml/documentation/kmlreference\#polystyle}{KML polyStyle Reference}
 }
 \author{
 Brent Cameron\cr

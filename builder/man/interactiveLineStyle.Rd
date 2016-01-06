@@ -1,4 +1,4 @@
-\name{interactiveLineStyle, interactiveLineStyle.RKmlFolder}
+\name{interactiveLineStyle}
 \alias{interactiveLineStyle}
 \title{
 Interactively Create LineStyle

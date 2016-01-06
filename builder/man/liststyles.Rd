@@ -1,4 +1,4 @@
-\name{liststyles, liststyles.RkmlFolder}
+\name{liststyles}
 \alias{liststyles}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{

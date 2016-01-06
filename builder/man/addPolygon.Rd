@@ -1,4 +1,4 @@
-\name{addPolygon, addPolygon.RkmlFolder}
+\name{addPolygon}
 \alias{addPolygon}
 \title{
 Add Polygon features to a kml
@@ -44,9 +44,9 @@ You can add styles directly by defining any of the following variables. This is 
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#polygon}{KML polygon Reference} \cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
-\href{http:\/\/www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
+\href{https://developers.google.com/kml/documentation/kmlreference\#polygon}{KML polygon Reference} \cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
+\href{http://www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
 }
 \author{
 Brent Cameron \cr
@@ -64,7 +64,7 @@ For advanced description arguments, wrap html in CDATA tags. You can use package
 \code{<font face='Courier'>Example Text</font>}\cr
 \code{]]>''}\cr
 \cr
-      See also: \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
+      See also: \href{https://developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
       
       
 }

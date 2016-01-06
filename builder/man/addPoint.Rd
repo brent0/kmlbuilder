@@ -1,4 +1,4 @@
-\name{addPoint, addPoint.RkmlFolder}
+\name{addPoint}
 \alias{addPoint}
 \title{
 Add Point Features
@@ -7,14 +7,13 @@ Add Point Features
 After creating a kml object or folder, you can add Point features with this function so they are viewable in the graphics window of the google API. A dataframe x must be suplied to this function. At a minimum, x must contain columns lat and lon. To style these features, use addIconStyle and/or addLabelSytle and match styleid to styleUrl. 
 }
 \usage{
-yourKMLobj$addPoint(x)
+yourKMLobj$addPoint(x, ...)
 yourKMLobj$addPoint(x, altitude, styleUrl, extrude, altitudeMode, name, visibility, open, atomauthor, atomlinkhref, address, xalAddressDetails, phoneNumber, Snippet, description, AbstractView, TimeStamp, TimeSpanStart, TimeSpanEnd, styleUrl, Region, ExtendedData)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
 
 \item{x}{Mandatory. A dataframe with columns lat and lon. x may also contain additional columns. All of the listed optional arguments can be supplied in the function call to apply to records of x, or can be a column of x (column name = argument name). This gives the ability to provide specific arguments to specific points.  }
-
 \item{altitude}{numeric. Meters above/below altiudeMode. 'clamp' altitudeModes ignore altitude. (Default: 0)}
 \item{extrude}{boolean (0-not extrude or 1-extrude). Choose weather to extrude(connect) the Point to the ground. If you wish to extrude, altitudeMode must be one of relativeToGround, relativeToSeaFloor, or absolute. (Default: 1)}
 \item{altitudeMode}{character, one of "clampToGround", "relativeToGround", "absolute", "clampToSeaFloor", "relativeToSeaFloor". (Default:"clampToGround")} 
@@ -41,10 +40,10 @@ You can add styles directly by defining any of the following variables. This is 
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#point}{KML Point Reference} \cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}\cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
-\href{http:\/\/www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
+\href{https://developers.google.com/kml/documentation/kmlreference\#point}{KML Point Reference} \cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}\cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
+\href{http://www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
 }
 \author{
 Brent Cameron \cr
@@ -61,7 +60,7 @@ For advanced description arguments, wrap html in CDATA tags. You can use package
 \code{<font face='Courier'>Example Text</font>}\cr
 \code{]]>''}\cr
 \cr
-      See also: \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
+      See also: \href{https://developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
       
 }
 

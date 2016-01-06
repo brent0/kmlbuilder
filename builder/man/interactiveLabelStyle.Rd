@@ -1,4 +1,4 @@
-\name{interactiveLabelStyle, interactiveLabelStyle.RKmlFolder}
+\name{interactiveLabelStyle}
 \alias{interactiveLabelStyle}
 \title{
 Interactively Create LabelStyle

@@ -1,4 +1,4 @@
-\name{writekml, writekml.RkmlFolder}
+\name{writekml}
 \alias{writekml}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{

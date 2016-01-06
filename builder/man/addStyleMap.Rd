@@ -1,4 +1,4 @@
-\name{addStyleMap, addStyleMap.RKmlFolder}
+\name{addStyleMap}
 \alias{addStyleMap}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -20,7 +20,7 @@ Mandatory. Define style id. kml features will need to reference this id to use t
 }
 
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#stylemap}{KML styleMap Reference}
+\href{https://developers.google.com/kml/documentation/kmlreference\#stylemap}{KML styleMap Reference}
 }
 \author{
 Brent Cameron\cr

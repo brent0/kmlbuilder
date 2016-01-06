@@ -1,4 +1,4 @@
-\name{addScreenOverlay, addScreenOverlay.RkmlFolder}
+\name{addScreenOverlay}
 \alias{addScreenOverlay}
 \title{
 Add a Screen Overlay to kml
@@ -54,9 +54,9 @@ addGroundOverlay(fn = pathtoimage, overlay_x, overlay_xunit, overlay_y, overlay_
      \item{inFolder}{Allows the adding of data to a specified folder, (EXPERIMENTAL) Usage: inFolder = 'this\\that' }   
 }
 \references{
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#screenoverlay}{KML screenoverlay Reference} \cr
-\href{https:\/\/developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
-\href{http:\/\/www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
+\href{https://developers.google.com/kml/documentation/kmlreference\#screenoverlay}{KML screenoverlay Reference} \cr
+\href{https://developers.google.com/kml/documentation/kmlreference\#sampleattribution}{Ascription Elements}\cr 
+\href{http://www.schemacentral.com/sc/kml22/e-xal_AddressDetails.html}{xal:AddressDetails}
 }
 \author{
 Brent Cameron \cr
@@ -73,7 +73,7 @@ For advanced description arguments, wrap html in CDATA tags. You can use package
 \code{<font face='Courier'>Example Text</font>}\cr
 \code{]]>''}\cr
 \cr
-      See also: \href{https:\/\/developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
+      See also: \href{https://developers.google.com/kml/documentation/kmlreference\#descriptionexample}{Description Example}
       
       }
 \examples{
