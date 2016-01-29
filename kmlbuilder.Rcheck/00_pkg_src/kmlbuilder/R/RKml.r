@@ -372,7 +372,7 @@ setMethodS3("interactiveLineStyle", "RKmlFolder", function(this, id, ...) {
   
 
 })
-setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = NULL, color = "", transparency = NULL, scale = 1, heading = 0, xunits = "fraction", yunits = "fraction", x = .5, y = .5, colorMode = "normal", ...) {
+setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = NULL, color = "", transparency = 1, scale = 1, heading = 0, xunits = "fraction", yunits = "fraction", x = .5, y = .5, colorMode = "normal", ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   lstyle =  c("<IconStyle>"                                                                        
 ,"<color>..rep..</color>"                                                             
@@ -458,7 +458,7 @@ setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = 
   tmp$.styles[[styleid]] = style 
   
 })
-setMethodS3("addPolyStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, colorMode = NULL, fill = "1", outline = "1", ...) {
+setMethodS3("addPolyStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = 1, colorMode = NULL, fill = "1", outline = "1", ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   lstyle = c("<PolyStyle>"
              ,"<color>..rep..</color>"
@@ -551,7 +551,7 @@ setMethodS3("addStyleMap", "RKmlFolder", function(this, id = NULL, idn = NULL, i
   
   tmp$.styles[[id]] = stylemap
 })
-setMethodS3("addLabelStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, colorMode = "normal", scale = 1, ...) {
+setMethodS3("addLabelStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = 1, colorMode = "normal", scale = 1, ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   lstyle = c("<LabelStyle>"
 ,"<color>..rep..</color>"
@@ -616,7 +616,7 @@ setMethodS3("addBalloonStyle", "RKmlFolder", function(this, styleid = NULL, bgCo
   ,"<displayMode>..rep..</displayMode>"
   ,"</BalloonStyle>")    
 
-bgColor = color2kmlcolor(color = bgColor, transparency = NULL)
+bgColor = color2kmlcolor(color = bgColor, transparency = 1)
 
   
   ind = grep("<bgColor>", lstyle)
@@ -625,7 +625,7 @@ bgColor = color2kmlcolor(color = bgColor, transparency = NULL)
   }
   else lstyle = lstyle[-ind]
   
-textColor = color2kmlcolor(color = textColor, transparency = NULL)
+textColor = color2kmlcolor(color = textColor, transparency = 1)
   
   
   ind = grep("<textColor>", lstyle)
@@ -682,7 +682,7 @@ textColor = color2kmlcolor(color = textColor, transparency = NULL)
   tmp$.styles[[styleid]] = style 
   
 })
-setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, width = 1, outerColor = NULL, outerTransparency = NULL, outerPortion = NULL, colorMode = NULL, labelVisibility = 0, ...) {
+setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = 1, width = 1, outerColor = NULL, outerTransparency = NULL, outerPortion = NULL, colorMode = NULL, labelVisibility = 0, ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   pwidth = NULL
   lstyle = c("<LineStyle>"                                     
@@ -784,7 +784,7 @@ setMethodS3("addListStyle", "RKmlFolder", function(this, styleid = NULL, listIte
              ,"<bgColor>..rep..</bgColor>"
              ,"</ListStyle>") 
   
-  bgColor = color2kmlcolor(color = bgColor, transparency = NULL)
+  bgColor = color2kmlcolor(color = bgColor, transparency = 1)
   ind = grep("<bgColor>", lstyle)
   if(!is.null(bgColor)){
     lstyle[ind] = gsub("..rep..", bgColor, lstyle[ind])
@@ -1235,7 +1235,7 @@ if(!(is.null(line_color) & is.null(line_transparency) & is.null(line_width) & is
            
            if(is){
            if(is.null(icon_color)) icon_color = ""
-           if(is.null(icon_transparency)) icon_transparency = NULL
+           if(is.null(icon_transparency)) icon_transparency = 1
            if(is.null(icon_scale))icon_scale = 1
            if(is.null(icon_heading))icon_heading = 0
            if(is.null(icon_xunits))icon_xunits = "fraction"
@@ -1253,14 +1253,14 @@ if(!(is.null(line_color) & is.null(line_transparency) & is.null(line_width) & is
            }
            if(lis){
            if(is.null(line_color))line_color = "red"
-           if(is.null(line_transparency))line_transparency = NULL
+           if(is.null(line_transparency))line_transparency = 1
            if(is.null(line_width))line_width = 1
            if(is.null(line_labelVisibility))line_labelVisibility = 0
            tmp$addLineStyle(styleid = sid, color = line_color, transparency = line_transparency, width = line_width, outerColor = line_outerColor, outerTransparency = line_outerTransparency, outerPortion = line_outerPortion, colorMode = line_colorMode, labelVisibility = line_labelVisibility)
            }
            if(ls){
            if(is.null(label_color))icon_color = "red"
-           if(is.null(label_transparency))label_transparency = NULL
+           if(is.null(label_transparency))label_transparency = 1
            if(is.null(label_colorMode))label_colorMode = "normal"
            if(is.null(label_scale))label_scale = 1   
            tmp$addLabelStyle(styleid = sid, color = label_color, transparency = label_transparency, colorMode = label_colorMode, scale = label_scale)
@@ -1767,7 +1767,7 @@ if(is | ls | bs | lis){
     
     if(is){
       if(is.null(icon_color)) icon_color = ""
-      if(is.null(icon_transparency)) icon_transparency = NULL
+      if(is.null(icon_transparency)) icon_transparency = 1
       if(is.null(icon_scale))icon_scale = 1
       if(is.null(icon_heading))icon_heading = 0
       if(is.null(icon_xunits))icon_xunits = "fraction"
@@ -1785,14 +1785,14 @@ if(is | ls | bs | lis){
     }
     if(lis){
       if(is.null(line_color))line_color = "red"
-      if(is.null(line_transparency))line_transparency = NULL
+      if(is.null(line_transparency))line_transparency = 1
       if(is.null(line_width))line_width = 1
       if(is.null(line_labelVisibility))line_labelVisibility = 0
       tmp$addLineStyle(styleid = sid, color = line_color, transparency = line_transparency, width = line_width, outerColor = line_outerColor, outerTransparency = line_outerTransparency, outerPortion = line_outerPortion, colorMode = line_colorMode, labelVisibility = line_labelVisibility)
     }
     if(ls){
       if(is.null(label_color))label_color = "red"
-      if(is.null(label_transparency))label_transparency = NULL
+      if(is.null(label_transparency))label_transparency = 1
       if(is.null(label_colorMode))label_colorMode = "normal"
       if(is.null(label_scale))label_scale = 1   
       tmp$addLabelStyle(styleid = sid, color = label_color, transparency = label_transparency, colorMode = label_colorMode, scale = label_scale)
@@ -2310,7 +2310,7 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
            else icon_color = mx$icon_color[1]
          }
          
-         if(is.null(icon_transparency)) icon_transparency = NULL
+         if(is.null(icon_transparency)) icon_transparency = 1
          else{
            if(is.null(mx$icon_transparency)){
              icon_transparency = icon_transparency[modmod(i, length(icon_transparency))]
@@ -2413,7 +2413,7 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
            else line_color = mx$line_color[1]
          }
          
-           if(is.null(line_transparency))line_transparency = NULL
+           if(is.null(line_transparency))line_transparency = 1
          else{
            if(is.null(mx$line_transparency)){
             line_transparency = line_transparency[modmod(i, length(line_transparency))]
@@ -2448,7 +2448,7 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
            else label_color = mx$label_color[1]
          }
          
-           if(is.null(label_transparency))label_transparency = NULL
+           if(is.null(label_transparency))label_transparency = 1
          else{
            if(is.null(mx$label_transparency)){
             label_transparency = label_transparency[modmod(i, length(label_transparency))]
@@ -2725,7 +2725,7 @@ for(i in 1:nrow(x)){
     ExtendedData = NULL             # Currently not supported
   drawOrder = NULL 
   color = ""
-  transparency = NULL
+  transparency = 1
   altitude = NULL                  # meters above/below altiudeMode, clamp altitudeModes ignores altitude
   altitudeMode = NULL  # one of "clampToGround", "relativeToGround", "absolute", "clampToSeaFloor", "relativeToSeaFloor" 
     
@@ -3076,7 +3076,7 @@ setMethodS3("addScreenOverlay", "RKmlFolder", function(this, fn = NULL, ...) {
   ExtendedData = NULL             # Currently not supported
   drawOrder = NULL 
   color = ""
-  transparency = NULL
+  transparency = 1
   rotation = 0
   
   
@@ -4128,13 +4128,10 @@ setMethodS3("loadStyle", "RKmlFolder", function(this, path, ...) {
   }
   
 })
-color2kmlcolor = function(color = "", transparency = NULL) {
+color2kmlcolor = function(color = "", transparency = 1) {
   
-  overridetrans = FALSE
-  if(is.null(transparency)){
-    transparency = 1
-    overridetrans = TRUE
-  }
+  if(is.null(transparency)) transparency = 1
+  
   if(!is.null(color))if(color == "")color = NULL
   tra = as.hexmode(round(as.numeric(transparency)*255))
   if(nchar(tra) == 1) tra = paste("0", tra, sep = "")
@@ -4155,15 +4152,7 @@ color2kmlcolor = function(color = "", transparency = NULL) {
       color = paste(color[3], color[2], color[1], sep="")
     }
     else if(grepl("#", color)){
-      if(nchar(color) == 9){
-        if(overridetrans){ 
-          tra = substr(color, 2, 3)
-        }
-        color = paste(substr(color, 8, 9), substr(color, 6, 7), substr(color, 4, 5), sep = "")
-      }
-      else{
-        color = paste(substr(color, 6, 7), substr(color, 4, 5), substr(color, 2, 3), sep = "")
-      }
+      color = paste(substr(color, 6, 7), substr(color, 4, 5), substr(color, 2, 3), sep = "")
     }
     color = tolower(paste("#", tra, color, sep=""))
     

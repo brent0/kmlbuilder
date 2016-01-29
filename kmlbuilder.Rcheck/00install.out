@@ -1,0 +1,30 @@
+* installing *source* package 'kmlbuilder' ...
+** R
+** data
+*** moving datasets to lazyload DB
+** preparing package for lazy loading
+Warning: package 'R.oo' was built under R version 3.2.3
+Warning: package 'R.methodsS3' was built under R version 3.2.3
+Warning: package 'rgdal' was built under R version 3.2.3
+Warning: package 'sp' was built under R version 3.2.3
+Warning: package 'RCurl' was built under R version 3.2.3
+Warning: package 'bitops' was built under R version 3.2.3
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+*** arch - i386
+Warning: package 'R.oo' was built under R version 3.2.3
+Warning: package 'R.methodsS3' was built under R version 3.2.3
+Warning: package 'rgdal' was built under R version 3.2.3
+Warning: package 'sp' was built under R version 3.2.3
+Warning: package 'RCurl' was built under R version 3.2.3
+Warning: package 'bitops' was built under R version 3.2.3
+*** arch - x64
+Warning: package 'R.oo' was built under R version 3.2.3
+Warning: package 'R.methodsS3' was built under R version 3.2.3
+Warning: package 'rgdal' was built under R version 3.2.3
+Warning: package 'sp' was built under R version 3.2.3
+Warning: package 'RCurl' was built under R version 3.2.3
+Warning: package 'bitops' was built under R version 3.2.3
+* DONE (kmlbuilder)
