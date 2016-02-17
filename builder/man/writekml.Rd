@@ -2,7 +2,7 @@
 \alias{writekml}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Write kml Object to file
+Write the kml Object to file
 }
 \description{
 Write the kml object to the specified file
