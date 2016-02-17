@@ -3,7 +3,7 @@
 
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Add Return and Remove Folder to and from KML file Structure
+Add Return and Remove a Folder to and from KML file Structure
 }
 \description{
 Manipulate the directory structure for your kml. Folders can be created within other folders. Folders must have unique fid within the same directory. 
