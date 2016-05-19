@@ -1,7 +1,6 @@
 Package: kmlbuilder
 Type: Package
 Title: Build KML Files from Data Frames
-Depends: R.oo, rgdal, RCurl
 Version: 1.1.8
 Date: 2016-01-29
 Author: Brent Cameron
