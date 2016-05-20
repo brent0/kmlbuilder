@@ -4129,7 +4129,7 @@ setMethodS3("loadStyle", "RKmlFolder", function(this, path, ...) {
   
 })
 color2kmlcolor = function(color = "", transparency = NULL) {
-  
+  if(color == "")color = "ffffff"
   overridetrans = FALSE
   if(is.null(transparency)){
     transparency = 1
