@@ -13,7 +13,7 @@ Package: \tab kmlbuilder\cr
 Type: \tab Package\cr
 Version: \tab 1.1.8\cr
 Date: \tab 2016-01-29\cr
-License: \tab GPL-3\cr
+License: \tab MIT\cr
 }
 Use this package if you would like to quickly generate kml documents from data stored in common R data structures
 }

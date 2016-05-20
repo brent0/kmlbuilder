@@ -13,7 +13,7 @@ yourkml$writekml(path)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{path}{
-Mandatory. The full path to you kml file. Remember that the filename must end with .kml }
+Mandatory. The full path to your kml file. Remember that the filename must end with kml }
 
 }
 

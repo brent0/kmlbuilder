@@ -1,5 +1,4 @@
 import(R.oo)
-importFrom("rgdal", readGDAL)
-importFrom("RCurl", url.exists)
+import(rgdal)
+import(RCurl)
 exportPattern("^[^\\.]")
-

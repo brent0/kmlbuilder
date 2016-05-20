@@ -10,9 +10,6 @@ Build a complete style with this function. The builder has the option to include
 \usage{
 yourkmlobj$styleBuilder()
 }
-%- maybe also 'usage' for other objects documented here.
-
-
 
 \author{
 Brent Cameron\cr
