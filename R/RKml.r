@@ -2,7 +2,10 @@ library("R.oo")
 library("rgdal")
 library("RCurl")
 
-setConstructorS3("RKmlFolder", function(id = "", parent = NULL) {
+#' @import R.oo R.methodsS3 
+#' @export RKmlFolder
+#' @export
+R.oo::setConstructorS3("RKmlFolder", function(id = "", parent = NULL) {
   R.oo::extend(Object(), "RKmlFolder",
                .id = id,
                .folders = list(),    #List to hold Folders objects
@@ -18,7 +21,10 @@ setConstructorS3("RKmlFolder", function(id = "", parent = NULL) {
 #Construct the Agent Object. The agent object is extended by most 
 #other objects in this simulation. They will inherit the folllowing 
 #variables and methods listed in this file. 
-setConstructorS3("RKmlObject", function(id = "") {
+#' @import R.oo R.methodsS3 
+#' @export RKmlObject
+#' @export
+R.oo::setConstructorS3("RKmlObject", function(id = "") {
   R.oo::extend(RKmlFolder(), "RKmlObject", 
                .id = id,
                .styles = list(),     #List to hold styles
@@ -27,11 +33,14 @@ setConstructorS3("RKmlObject", function(id = "") {
                
   )
 })
-setMethodS3("styleBuilder", "RKmlFolder", function(this, ...) {
+#' @import R.oo R.methodsS3 
+#' @export styleBuilder
+#' @export
+R.methodsS3::setMethodS3("styleBuilder", "RKmlFolder", function(this, ...) {
   print("Welcome to the interactive style builder. Plase answer the following questions. Some questions can be skipped by hitting the enter button, defaults will be assumed.")
   id = ""
   while(id == ""){
-  id = trim(readline("Please type an id for this style: "))  
+  id = trimws(readline("Please type an id for this style: "))  
   if(id == "")print("You must type an id")
   }
   ida = id
@@ -202,7 +211,10 @@ switch(AA,
   }
   
 })
-setMethodS3("interactiveLabelStyle", "RKmlFolder", function(this, id, ...) {
+#' @import R.oo R.methodsS3 
+#' @export interactiveLabelStyle
+#' @export
+R.methodsS3::setMethodS3("interactiveLabelStyle", "RKmlFolder", function(this, id, ...) {
   
   ret = ""
   tmp = this
@@ -222,7 +234,10 @@ setMethodS3("interactiveLabelStyle", "RKmlFolder", function(this, id, ...) {
        
 
   })
-setMethodS3("interactivePolyStyle", "RKmlFolder", function(this, id,  ...) {
+#' @import R.oo R.methodsS3 
+#' @export interactivePolyStyle
+#' @export
+R.methodsS3::setMethodS3("interactivePolyStyle", "RKmlFolder", function(this, id,  ...) {
   
   
   ret = ""
@@ -250,7 +265,10 @@ setMethodS3("interactivePolyStyle", "RKmlFolder", function(this, id,  ...) {
   
 
 })
-setMethodS3("interactiveBalloonStyle", "RKmlFolder", function(this, id,  ...) {
+#' @import R.oo R.methodsS3 
+#' @export interactiveBalloonStyle
+#' @export
+R.methodsS3::setMethodS3("interactiveBalloonStyle", "RKmlFolder", function(this, id,  ...) {
   
   ret = ""
   tmp = this
@@ -270,7 +288,10 @@ setMethodS3("interactiveBalloonStyle", "RKmlFolder", function(this, id,  ...) {
 
  
 })
-setMethodS3("interactiveIconStyle", "RKmlFolder", function(this, id,  ...) {
+#' @import R.oo R.methodsS3 
+#' @export styleBuilder
+#' @export
+R.methodsS3::setMethodS3("interactiveIconStyle", "RKmlFolder", function(this, id,  ...) {
     
   ret = ""
   tmp = this
@@ -323,7 +344,10 @@ setMethodS3("interactiveIconStyle", "RKmlFolder", function(this, id,  ...) {
   
   
 })
-setMethodS3("interactiveLineStyle", "RKmlFolder", function(this, id, ...) {
+#' @import R.oo R.methodsS3 
+#' @export interactiveLineStyle
+#' @export
+R.methodsS3::setMethodS3("interactiveLineStyle", "RKmlFolder", function(this, id, ...) {
   
   
   ret = ""
@@ -372,7 +396,10 @@ setMethodS3("interactiveLineStyle", "RKmlFolder", function(this, id, ...) {
   
 
 })
-setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = NULL, color = "", transparency = NULL, scale = 1, heading = 0, xunits = "fraction", yunits = "fraction", x = .5, y = .5, colorMode = "normal", ...) {
+#' @import R.oo R.methodsS3 
+#' @export addIconStyle
+#' @export
+R.methodsS3::setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = NULL, color = "", transparency = NULL, scale = 1, heading = 0, xunits = "fraction", yunits = "fraction", x = .5, y = .5, colorMode = "normal", ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   lstyle =  c("<IconStyle>"                                                                        
 ,"<color>..rep..</color>"                                                             
@@ -458,7 +485,10 @@ setMethodS3("addIconStyle", "RKmlFolder", function(this, styleid = NULL, href = 
   tmp$.styles[[styleid]] = style 
   
 })
-setMethodS3("addPolyStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, colorMode = NULL, fill = "1", outline = "1", ...) {
+#' @import R.oo R.methodsS3 
+#' @export addPolyStyle
+#' @export
+R.methodsS3::setMethodS3("addPolyStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, colorMode = NULL, fill = "1", outline = "1", ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   lstyle = c("<PolyStyle>"
              ,"<color>..rep..</color>"
@@ -532,7 +562,10 @@ setMethodS3("addPolyStyle", "RKmlFolder", function(this, styleid = NULL, color =
   tmp$.styles[[styleid]] = style 
 
 })
-setMethodS3("addStyleMap", "RKmlFolder", function(this, id = NULL, idn = NULL, idh = NULL, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addStyleMap
+#' @export
+R.methodsS3::setMethodS3("addStyleMap", "RKmlFolder", function(this, id = NULL, idn = NULL, idh = NULL, ...) {
   tmp = this
   if(is.null(id))throw("You must supply an id argument")
   if(is.null(idn))throw("You must supply an idn argument")
@@ -551,7 +584,10 @@ setMethodS3("addStyleMap", "RKmlFolder", function(this, id = NULL, idn = NULL, i
   
   tmp$.styles[[id]] = stylemap
 })
-setMethodS3("addLabelStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, colorMode = "normal", scale = 1, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addLabelStyle
+#' @export
+R.methodsS3::setMethodS3("addLabelStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, colorMode = "normal", scale = 1, ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   lstyle = c("<LabelStyle>"
 ,"<color>..rep..</color>"
@@ -606,7 +642,10 @@ setMethodS3("addLabelStyle", "RKmlFolder", function(this, styleid = NULL, color 
   tmp$.styles[[styleid]] = style 
   
 })
-setMethodS3("addBalloonStyle", "RKmlFolder", function(this, styleid = NULL, bgColor = "white", textColor = "black", text = NULL, displayMode = "display", ...) {
+#' @import R.oo R.methodsS3 
+#' @export addBalloonStyle
+#' @export
+R.methodsS3::setMethodS3("addBalloonStyle", "RKmlFolder", function(this, styleid = NULL, bgColor = "white", textColor = "black", text = NULL, displayMode = "display", ...) {
 
   if(is.null(styleid)) throw("You must define the styleid argument.")
   lstyle = c("<BalloonStyle>"
@@ -682,7 +721,10 @@ textColor = color2kmlcolor(color = textColor, transparency = NULL)
   tmp$.styles[[styleid]] = style 
   
 })
-setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, width = 1, outerColor = NULL, outerTransparency = NULL, outerPortion = NULL, colorMode = NULL, labelVisibility = 0, ...) {
+#' @import R.oo R.methodsS3 
+#' @export styleBuilder
+#' @export
+R.methodsS3::setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, width = 1, outerColor = NULL, outerTransparency = NULL, outerPortion = NULL, colorMode = NULL, labelVisibility = 0, ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
   pwidth = NULL
   lstyle = c("<LineStyle>"                                     
@@ -778,7 +820,10 @@ setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color =
   tmp$.styles[[styleid]] = style 
   
 })
-setMethodS3("addListStyle", "RKmlFolder", function(this, styleid = NULL, listItemType = "check", bgColor = "white", ...) {
+#' @import R.oo R.methodsS3 
+#' @export addListStyle
+#' @export
+R.methodsS3::setMethodS3("addListStyle", "RKmlFolder", function(this, styleid = NULL, listItemType = "check", bgColor = "white", ...) {
   lstyle = c("<ListStyle>"
              ,"<listItemType>..rep..</listItemType>"
              ,"<bgColor>..rep..</bgColor>"
@@ -820,7 +865,10 @@ setMethodS3("addListStyle", "RKmlFolder", function(this, styleid = NULL, listIte
   tmp$.styles[[styleid]] = style 
   
 })
-setMethodS3("addAbstractView", "RKmlFolder", function(this, viewid = NULL, type = "camera", ViewerOptions = NULL, longitude = NULL, latitude = NULL, altitude = NULL, heading = NULL, tilt = NULL, range = NULL, L, roll = NULL, TimeStamp = NULL, TimeSpanStart = NULL, TimeSpanEnd = NULL, altitudeMode = NULL, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addAbstractView
+#' @export
+R.methodsS3::setMethodS3("addAbstractView", "RKmlFolder", function(this, viewid = NULL, type = "camera", ViewerOptions = NULL, longitude = NULL, latitude = NULL, altitude = NULL, heading = NULL, tilt = NULL, range = NULL, L, roll = NULL, TimeStamp = NULL, TimeSpanStart = NULL, TimeSpanEnd = NULL, altitudeMode = NULL, ...) {
   if(is.null(altitudeMode)){  
     if(!is.null(altitude)) altitudeMode = "relativeToGround"
     else altitude = 0
@@ -946,7 +994,10 @@ setMethodS3("addAbstractView", "RKmlFolder", function(this, viewid = NULL, type 
   tmp$.Aviewlist[[viewid]] = style 
   
   })
-setMethodS3("addPoint", "RKmlFolder", function(this, x, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addPoint
+#' @export
+R.methodsS3::setMethodS3("addPoint", "RKmlFolder", function(this, x, ...) {
   args = list(...)
 
   tryCatch({
@@ -1346,7 +1397,10 @@ if(!(is.null(line_color) & is.null(line_transparency) & is.null(line_width) & is
   }
    
 })
-setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addPolygon
+#' @export
+R.methodsS3::setMethodS3("addPolygon", "RKmlFolder", function(this, x, y = NULL, ...) {
   args = list(...)
   
   tryCatch({
@@ -1920,7 +1974,10 @@ else{
   }
   
 })
-setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
+#' @import R.oo R.methodsS3 
+#' @export styleBuilder
+#' @export
+R.methodsS3::setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
   args = list(...)
  
   tryCatch({
@@ -2613,7 +2670,10 @@ setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
   }
   
 })
-setMethodS3("addGroundOverlay", "RKmlFolder", function(this, fn = NULL, east=NA, west=NA, north=NA, south=NA, x = NULL, ...) {
+#' @import R.oo R.methodsS3 RCurl
+#' @export addGroundOverlay
+#' @export
+R.methodsS3::setMethodS3("addGroundOverlay", "RKmlFolder", function(this, fn = NULL, east=NA, west=NA, north=NA, south=NA, x = NULL, ...) {
   args = list(...)
 
 
@@ -3046,7 +3106,10 @@ for(i in 1:nrow(x)){
 }
   
 })
-setMethodS3("addScreenOverlay", "RKmlFolder", function(this, fn = NULL, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addScreenOverlay
+#' @export
+R.methodsS3::setMethodS3("addScreenOverlay", "RKmlFolder", function(this, fn = NULL, ...) {
   args = list(...)
   
   if(is.null(fn))throw("fn must not be null")
@@ -3368,7 +3431,10 @@ setMethodS3("addScreenOverlay", "RKmlFolder", function(this, fn = NULL, ...) {
   
   
 })
-setMethodS3("getFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
+#' @import R.oo R.methodsS3 
+#' @export styleBuilder
+#' @export
+R.methodsS3::setMethodS3("getFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
   if(is.null(this$.folders[[fid]])){
     if(!silent)message(paste("Folder '", fid, "' in '", this$.id, "' does not exist", sep = ""))
     return(NULL)
@@ -3378,7 +3444,10 @@ setMethodS3("getFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
     return(this$.folders[[fid]])
   }
 })
-setMethodS3("addFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addFolder
+#' @export
+R.methodsS3::setMethodS3("addFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
   
   
   if(!is.null(this$.folders[[fid]])){
@@ -3549,11 +3618,17 @@ setMethodS3("addFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
     if(!silent)message(paste("Folder '", fid, "' to '", this$.id, "' Added", sep = ""))
   }
 })
-setMethodS3("removeFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
+#' @import R.oo R.methodsS3 
+#' @export removeFolder
+#' @export
+R.methodsS3::setMethodS3("removeFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
   this$.folders[[fid]] = NULL
   if(!silent)message(paste("folder '", fid, "' removed from '", this$.id, "'", sep = ""))
 })
-setMethodS3("removeStyle", "RKmlFolder", function(this, styleid = NULL, styletype = NULL, silent = T, ...) {
+#' @import R.oo R.methodsS3 
+#' @export removeStyle
+#' @export
+R.methodsS3::setMethodS3("removeStyle", "RKmlFolder", function(this, styleid = NULL, styletype = NULL, silent = T, ...) {
   tmp = this
   while(!is.null(tmp$.parent)) tmp = tmp$.parent
   
@@ -3573,7 +3648,10 @@ setMethodS3("removeStyle", "RKmlFolder", function(this, styleid = NULL, styletyp
   }
 
 })
-setMethodS3("liststyles", "RKmlFolder", function(this, ...) {
+#' @import R.oo R.methodsS3 
+#' @export liststyles
+#' @export
+R.methodsS3::setMethodS3("liststyles", "RKmlFolder", function(this, ...) {
   tmp = this
   while(!is.null(tmp$.parent)) tmp = tmp$.parent
   for(i in 1:length(tmp$.styles)){
@@ -3591,7 +3669,10 @@ print(st)
   }
   
   })
-setMethodS3("addNetworkLink", "RKmlFolder", function(this, href = NULL, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addNetworkLink
+#' @export
+R.methodsS3::setMethodS3("addNetworkLink", "RKmlFolder", function(this, href = NULL, ...) {
   args = list(...)
   
   
@@ -3922,7 +4003,10 @@ setMethodS3("addNetworkLink", "RKmlFolder", function(this, href = NULL, ...) {
   
   
 })
-setMethodS3("addNetworkLinkControl", "RKmlFolder", function(this, minRefreshPeriod =NULL, maxSessionLength = -1, cookie = NULL, message = NULL, linkName = NULL, linkDescription = NULL, linkSnippet = NULL, expires = NULL, update = NULL, AbstractView = NULL, ...) {
+#' @import R.oo R.methodsS3 
+#' @export addNetworkLinkControl
+#' @export
+R.methodsS3::setMethodS3("addNetworkLinkControl", "RKmlFolder", function(this, minRefreshPeriod =NULL, maxSessionLength = -1, cookie = NULL, message = NULL, linkName = NULL, linkDescription = NULL, linkSnippet = NULL, expires = NULL, update = NULL, AbstractView = NULL, ...) {
  
   style = c( "<NetworkLinkControl>"                             
              ,"<minRefreshPeriod>..rep..</minRefreshPeriod>"     
@@ -4021,7 +4105,10 @@ setMethodS3("addNetworkLinkControl", "RKmlFolder", function(this, minRefreshPeri
    
   
 })
-setMethodS3("writekml", "RKmlFolder", function(this, path, ...) {
+#' @import R.oo R.methodsS3 
+#' @export writekml
+#' @export
+R.methodsS3::setMethodS3("writekml", "RKmlFolder", function(this, path, ...) {
   
   if(dirname(path) != ".")dir.create(dirname(path), recursive = T, showWarnings = F)
 
@@ -4068,7 +4155,10 @@ setMethodS3("writekml", "RKmlFolder", function(this, path, ...) {
 
 
 })
-setMethodS3("printcontents", "RKmlFolder", function(this, path, ...) {
+#' @import R.oo R.methodsS3 
+#' @export printcontents
+#' @export
+R.methodsS3::setMethodS3("printcontents", "RKmlFolder", function(this, path, ...) {
  
   zz = file(path, "a")
   
@@ -4091,7 +4181,10 @@ setMethodS3("printcontents", "RKmlFolder", function(this, path, ...) {
   close(zz)
   
 })
-setMethodS3("preview", "RKmlFolder", function(this, ...) {
+#' @import R.oo R.methodsS3 
+#' @export preview
+#' @export
+R.methodsS3::setMethodS3("preview", "RKmlFolder", function(this, ...) {
 
   #zz = tempdir()
   
@@ -4107,13 +4200,19 @@ setMethodS3("preview", "RKmlFolder", function(this, ...) {
   
 
 })
-setMethodS3("saveStyle", "RKmlFolder", function(this, path, ...) {
+#' @import R.oo R.methodsS3 
+#' @export saveStyle
+#' @export
+R.methodsS3::setMethodS3("saveStyle", "RKmlFolder", function(this, path, ...) {
   
   if(dirname(path) != ".")dir.create(dirname(path), recursive = T, showWarnings = F)
   saveRDS(this$.styles, file = path)
   
 })
-setMethodS3("loadStyle", "RKmlFolder", function(this, path, ...) {
+#' @import R.oo R.methodsS3 
+#' @export loadStyle
+#' @export
+R.methodsS3::setMethodS3("loadStyle", "RKmlFolder", function(this, path, ...) {
   
   tempstyle = readRDS(path)
   for(i in 1:length(names(tempstyle))){

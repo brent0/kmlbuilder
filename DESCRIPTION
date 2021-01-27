@@ -14,3 +14,4 @@ Description: Easily generate keyhole markup files from dataframes. These files
         to style these features.
 ERRORS: Submit bug report at https://github.com/brent0/kmlbuilder
 License: MIT
+RoxygenNote: 7.1.1
