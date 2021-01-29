@@ -289,7 +289,7 @@ R.methodsS3::setMethodS3("interactiveBalloonStyle", "RKmlFolder", function(this,
  
 })
 #' @import R.oo R.methodsS3 
-#' @export styleBuilder
+#' @export interactiveIconStyle
 #' @export
 R.methodsS3::setMethodS3("interactiveIconStyle", "RKmlFolder", function(this, id,  ...) {
     
@@ -722,7 +722,7 @@ textColor = color2kmlcolor(color = textColor, transparency = NULL)
   
 })
 #' @import R.oo R.methodsS3 
-#' @export styleBuilder
+#' @export addLineStyle
 #' @export
 R.methodsS3::setMethodS3("addLineStyle", "RKmlFolder", function(this, styleid = NULL, color = "red", transparency = NULL, width = 1, outerColor = NULL, outerTransparency = NULL, outerPortion = NULL, colorMode = NULL, labelVisibility = 0, ...) {
   if(is.null(styleid)) throw("You must define the styleid argument.")
@@ -1975,7 +1975,7 @@ else{
   
 })
 #' @import R.oo R.methodsS3 
-#' @export styleBuilder
+#' @export addLineString
 #' @export
 R.methodsS3::setMethodS3("addLineString", "RKmlFolder", function(this, x, ...) {
   args = list(...)
@@ -3432,7 +3432,7 @@ R.methodsS3::setMethodS3("addScreenOverlay", "RKmlFolder", function(this, fn = N
   
 })
 #' @import R.oo R.methodsS3 
-#' @export styleBuilder
+#' @export getFolder
 #' @export
 R.methodsS3::setMethodS3("getFolder", "RKmlFolder", function(this, fid, silent = T, ...) {
   if(is.null(this$.folders[[fid]])){
