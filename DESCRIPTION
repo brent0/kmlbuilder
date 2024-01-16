@@ -1,7 +1,7 @@
 Package: kmlbuilder
 Type: Package
 Title: Build KML Files from Data Frames
-Depends: R.oo, rgdal, RCurl
+Depends: R.oo, rgdal, RCurl, R.methodsS3
 Version: 1.1.8
 Date: 2016-01-29
 Author: Brent Cameron
@@ -14,4 +14,5 @@ Description: Easily generate keyhole markup files from dataframes. These files
         to style these features.
 ERRORS: Submit bug report at https://github.com/brent0/kmlbuilder
 License: MIT
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.0
+Encoding: UTF-8
